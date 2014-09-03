@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.juicy.signature.persist.po">
+	<class
+		name="HgMasstextingRule"
+		table="HG_MASSTEXTING_RULE"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="Id"
+			type="integer"
+			column="MASSTEXT_RULEID"
+		>
+			<generator class="sequence"/>
+		</id>
+
+		<property
+			name="DiyInfoId"
+			column="DIY_INFO_ID"
+			type="integer"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="MessageTypeId"
+			column="MESSAGE_TYPE_ID"
+			type="integer"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="CustomerId"
+			column="CUSTOMER_ID"
+			type="integer"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="CustomerGroupId"
+			column="CUSTOMER_GROUP_ID"
+			type="integer"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="MasstextRulename"
+			column="MASSTEXT_RULENAME"
+			type="string"
+			not-null="true"
+			length="40"
+		/>
+		<property
+			name="MasstextRuleState"
+			column="MASSTEXT_RULE_STATE"
+			type="integer"
+			not-null="true"
+			length="10"
+		/>
+		<property
+			name="MasstextRuleSendnum"
+			column="MASSTEXT_RULE_SENDNUM"
+			type="integer"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="MasstextRuleIsControl"
+			column="MASSTEXT_RULE_IS_CONTROL"
+			type="boolean"
+			not-null="true"
+			length="1"
+		/>
+		<property
+			name="MasstextRuleFlows"
+			column="MASSTEXT_RULE_FLOWS"
+			type="integer"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="MasstextRuleCreatetime"
+			column="MASSTEXT_RULE_CREATETIME"
+			type="timestamp"
+			not-null="true"
+			length="23"
+		/>
+		<property
+			name="MasstextRuleSendtype"
+			column="MASSTEXT_RULE_SENDTYPE"
+			type="integer"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="MasstextRuleSendtime"
+			column="MASSTEXT_RULE_SENDTIME"
+			type="timestamp"
+			not-null="false"
+			length="23"
+		/>
+		<property
+			name="MasstextRulePriority"
+			column="MASSTEXT_RULE_PRIORITY"
+			type="integer"
+			not-null="false"
+			length="10"
+		/>
+
+
+	</class>	
+</hibernate-mapping>

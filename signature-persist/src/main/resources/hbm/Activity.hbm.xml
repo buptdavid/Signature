@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+	
+<hibernate-mapping package="com.juicy.signature.persist.po">
+	<class
+		name="Activity"
+		table="ACTIVITY"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<cache usage="read-write"></cache>
+		<id
+			name="Id"
+			type="integer"
+			column="id"
+		>
+		</id>
+		
+		<property
+			name="Name"
+			column="name"
+			type="string"
+			not-null="false"
+			length="100"
+		/>
+		
+		<property
+			name="Theme"
+			column="theme"
+			type="string"
+			not-null="false"
+			length="1000"
+		/>
+		
+		<property
+			name="StartTime"
+			column="start_time"
+			type="timestamp"
+			not-null="false"
+			length="23"
+		/>
+		
+		
+		<property
+			name="EndTime"
+			column="end_time"
+			type="timestamp"
+			not-null="false"
+			length="23"
+		/>
+		
+		<property
+			name="Customers"
+			column="customers"
+			type="string"
+			not-null="false"
+			length="1000"
+		/>
+		
+		
+		<property
+			name="Detail"
+			column="detail"
+			type="string"
+			not-null="false"
+			length="1000"
+		/>
+		
+		<property
+			name="Regulation"
+			column="regulation"
+			type="string"
+			not-null="false"
+			length="1000"
+		/>
+		
+		<property
+			name="Image"
+			column="image"
+			type="string"
+			not-null="false"
+			length="1000"
+		/>
+		
+		<property
+			name="Remark"
+			column="remark"
+			type="string"
+			not-null="false"
+			length="1000"
+		/>
+		
+		<property
+			name="Time"
+			column="time"
+			type="timestamp"
+			not-null="false"
+			length="23"
+		/>
+		
+		<property
+			name="IsDelete"
+			column="is_delete"
+			type="boolean"
+			not-null="false"
+		/>
+		
+		
+		<property
+			name="IsIndex"
+			column="is_index"
+			type="boolean"
+			not-null="false"
+		/>
+		
+		<property
+			name="IndexImage"
+			column="index_image"
+			type="string"
+			not-null="false"
+			length="1000"
+		/>
+						
+		<many-to-one
+			name="Customer"
+			column="manager_id"
+			class="HgCustomer"
+			not-null="true"
+		>
+		</many-to-one>
+
+
+	</class>	
+</hibernate-mapping>

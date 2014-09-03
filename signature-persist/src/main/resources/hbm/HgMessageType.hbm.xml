@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.juicy.signature.persist.po">
+	<class
+		name="HgMessageType"
+		table="HG_MESSAGE_TYPE"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<cache usage="read-write"></cache>
+		<id
+			name="Id"
+			type="integer"
+			column="MESSAGE_TYPE_ID"
+		>
+		</id>
+
+		<property
+			name="MessageTypeName"
+			column="MESSAGE_TYPE_NAME"
+			type="string"
+			not-null="true"
+			length="20"
+		/>
+		<property
+			name="MessageTypeCode"
+			column="MESSAGE_TYPE_CODE"
+			type="string"
+			not-null="false"
+			length="20"
+		/>
+		<property
+			name="MessageTypeUnit"
+			column="MESSAGE_TYPE_UNIT"
+			type="string"
+			not-null="false"
+			length="5"
+		/>
+
+
+	</class>	
+</hibernate-mapping>

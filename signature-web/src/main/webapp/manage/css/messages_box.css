@@ -1,0 +1,46 @@
+
+<!--
+body{ font-size:12px;}
+.c_box{
+word-wrap:break-word;
+background:url(../images/tbox_one_03.gif) left top no-repeat; width:340px;
+background-repeat:no-repeat;
+ }
+.c_box h3{ text-align:left;
+margin:0px 0px 0px 5px;
+height:30px;
+line-height:30px;
+font-size:14px;
+color:#FF0000;
+background:url(../images/tbox_one_04.gif) right top no-repeat;
+background-repeat:no-repeat;
+}
+.c_box em{
+display:block;
+font-style:normal;
+background:url(../images/tbox_one_03.gif) left bottom no-repeat;
+}
+
+.c_left{
+display:block;
+background:url(../images/tbox_one_03.gif) left bottom no-repeat;
+background-repeat:no-repeat;
+}
+.c_box em p{
+margin:0px 0px 0px 5px;
+padding:5px;
+display:block;
+background:url(../images/tbox_one_04.gif) right bottom no-repeat;
+}
+
+.c_right{
+margin:0px 0px 0px 5px;
+padding:5px;
+display:block;
+background:url(../images/tbox_one_04.gif) right bottom no-repeat;
+background-repeat:no-repeat;
+}
+ul,ol{ padding:0; margin:0; list-style:inside; list-style:none;}
+br{ height:2px; line-height:2px;}
+-->
+

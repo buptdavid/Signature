@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+	
+<hibernate-mapping package="com.juicy.signature.persist.po">
+	<class
+		name="Recommend"
+		table="RECOMMEND"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<cache usage="read-write"></cache>
+		<id
+			name="Id"
+			type="integer"
+			column="id"
+		>
+		</id>
+
+		<property
+			name="Content"
+			column="content"
+			type="string"
+			not-null="false"
+			length="1000"
+		/>
+		
+		<property
+			name="Source"
+			column="source"
+			type="byte"
+			not-null="false"
+		/>
+		
+		<property
+			name="Time"
+			column="time"
+			type="timestamp"
+			not-null="false"
+			length="23"
+		/>
+		
+		<property
+			name="IsDelete"
+			column="is_delete"
+			type="boolean"
+			not-null="false"
+		/>
+		
+		<property
+			name="ClassId"
+			column="class_id"
+			type="integer"
+			not-null="false"
+			length="10"
+		/>
+		
+		<property
+			name="ClassName"
+			column="class_name"
+			type="string"
+			not-null="false"
+			length="64"
+		/>
+		
+		<property
+			name="ParentId"
+			column="parent_id"
+			type="integer"
+			not-null="false"
+			length="10"
+		/>
+		
+		<property
+			name="ParentName"
+			column="parent_name"
+			type="string"
+			not-null="false"
+			length="64"
+		/>		
+		
+		<property
+			name="ForeignId"
+			column="foreign_id"
+			type="integer"
+			not-null="false"
+			length="10"
+		/>
+		
+		<many-to-one
+			name="Customer"
+			column="manager_id"
+			class="HgCustomer"
+			not-null="true"
+		>
+		</many-to-one>
+
+
+	</class>	
+</hibernate-mapping>

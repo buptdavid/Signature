@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.juicy.signature.persist.po">
+	<class
+		name="HgCustomerGroup"
+		table="HG_CUSTOMER_GROUP"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="Id"
+			type="integer"
+			column="CUSTOMER_GROUP_ID"
+		>
+			<generator class="sequence"/>
+		</id>
+
+		<property
+			name="CustomerId"
+			column="CUSTOMER_ID"
+			type="integer"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="CustomerGroupName"
+			column="CUSTOMER_GROUP_NAME"
+			type="string"
+			not-null="true"
+			length="40"
+		/>
+		<property
+			name="CustomerGroupType"
+			column="CUSTOMER_GROUP_TYPE"
+			type="integer"
+			not-null="true"
+			length="10"
+		/>
+		<property
+			name="CustomerGroupDescript"
+			column="CUSTOMER_GROUP_DESCRIPT"
+			type="string"
+			not-null="false"
+			length="200"
+		/>
+		<property
+			name="CustomerGroupCondition"
+			column="CUSTOMER_GROUP_CONDITION"
+			type="string"
+			not-null="false"
+			length="400"
+		/>
+		<property
+			name="CustomerGroupString"
+			column="CUSTOMER_GROUP_STRING"
+			type="string"
+			not-null="false"
+			length="400"
+		/>
+		<property
+			name="CustomerGroupUsed"
+			column="CUSTOMER_GROUP_USED"
+			type="integer"
+			not-null="false"
+			length="10"
+		/>
+
+
+	</class>	
+</hibernate-mapping>

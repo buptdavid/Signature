@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 173
+/svn/Jxht_local_project/!svn/ver/452/05%E6%89%8B%E6%9C%BA%E7%AD%BE%E5%90%8D/%E6%BA%90%E4%BB%A3%E7%A0%81/signature/signature-web/src/main/java/com/juicy/signature/action/base
+END
+IndexBaseAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 194
+/svn/Jxht_local_project/!svn/ver/452/05%E6%89%8B%E6%9C%BA%E7%AD%BE%E5%90%8D/%E6%BA%90%E4%BB%A3%E7%A0%81/signature/signature-web/src/main/java/com/juicy/signature/action/base/IndexBaseAction.java
+END
+RuleBaseAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 193
+/svn/Jxht_local_project/!svn/ver/452/05%E6%89%8B%E6%9C%BA%E7%AD%BE%E5%90%8D/%E6%BA%90%E4%BB%A3%E7%A0%81/signature/signature-web/src/main/java/com/juicy/signature/action/base/RuleBaseAction.java
+END
+SignatureManageBaseAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 204
+/svn/Jxht_local_project/!svn/ver/452/05%E6%89%8B%E6%9C%BA%E7%AD%BE%E5%90%8D/%E6%BA%90%E4%BB%A3%E7%A0%81/signature/signature-web/src/main/java/com/juicy/signature/action/base/SignatureManageBaseAction.java
+END
+ListBaseAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 193
+/svn/Jxht_local_project/!svn/ver/452/05%E6%89%8B%E6%9C%BA%E7%AD%BE%E5%90%8D/%E6%BA%90%E4%BB%A3%E7%A0%81/signature/signature-web/src/main/java/com/juicy/signature/action/base/ListBaseAction.java
+END
+ActivityBaseAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 197
+/svn/Jxht_local_project/!svn/ver/452/05%E6%89%8B%E6%9C%BA%E7%AD%BE%E5%90%8D/%E6%BA%90%E4%BB%A3%E7%A0%81/signature/signature-web/src/main/java/com/juicy/signature/action/base/ActivityBaseAction.java
+END
+CustomerStatisticsBaseAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 207
+/svn/Jxht_local_project/!svn/ver/452/05%E6%89%8B%E6%9C%BA%E7%AD%BE%E5%90%8D/%E6%BA%90%E4%BB%A3%E7%A0%81/signature/signature-web/src/main/java/com/juicy/signature/action/base/CustomerStatisticsBaseAction.java
+END
+SystemManageBaseAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 201
+/svn/Jxht_local_project/!svn/ver/452/05%E6%89%8B%E6%9C%BA%E7%AD%BE%E5%90%8D/%E6%BA%90%E4%BB%A3%E7%A0%81/signature/signature-web/src/main/java/com/juicy/signature/action/base/SystemManageBaseAction.java
+END
+UserBaseAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 193
+/svn/Jxht_local_project/!svn/ver/452/05%E6%89%8B%E6%9C%BA%E7%AD%BE%E5%90%8D/%E6%BA%90%E4%BB%A3%E7%A0%81/signature/signature-web/src/main/java/com/juicy/signature/action/base/UserBaseAction.java
+END
+AuditManageBaseAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 200
+/svn/Jxht_local_project/!svn/ver/452/05%E6%89%8B%E6%9C%BA%E7%AD%BE%E5%90%8D/%E6%BA%90%E4%BB%A3%E7%A0%81/signature/signature-web/src/main/java/com/juicy/signature/action/base/AuditManageBaseAction.java
+END
+IndexManageBaseAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 200
+/svn/Jxht_local_project/!svn/ver/452/05%E6%89%8B%E6%9C%BA%E7%AD%BE%E5%90%8D/%E6%BA%90%E4%BB%A3%E7%A0%81/signature/signature-web/src/main/java/com/juicy/signature/action/base/IndexManageBaseAction.java
+END
+SignatureBaseAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 198
+/svn/Jxht_local_project/!svn/ver/452/05%E6%89%8B%E6%9C%BA%E7%AD%BE%E5%90%8D/%E6%BA%90%E4%BB%A3%E7%A0%81/signature/signature-web/src/main/java/com/juicy/signature/action/base/SignatureBaseAction.java
+END
+SuggestBaseAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 196
+/svn/Jxht_local_project/!svn/ver/452/05%E6%89%8B%E6%9C%BA%E7%AD%BE%E5%90%8D/%E6%BA%90%E4%BB%A3%E7%A0%81/signature/signature-web/src/main/java/com/juicy/signature/action/base/SuggestBaseAction.java
+END
+ActivityManageBaseAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 203
+/svn/Jxht_local_project/!svn/ver/452/05%E6%89%8B%E6%9C%BA%E7%AD%BE%E5%90%8D/%E6%BA%90%E4%BB%A3%E7%A0%81/signature/signature-web/src/main/java/com/juicy/signature/action/base/ActivityManageBaseAction.java
+END

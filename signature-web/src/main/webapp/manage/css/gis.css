@@ -1,0 +1,41 @@
+.gisbox{ width:98%; margin:0 auto;}
+a {text-decoration: none;} /* 链接无下划线,有为underline */ 
+a:link {color: #000000;text-decoration: none;} /* 未访问的链接 */
+a:visited {color: #000000;text-decoration: none;} /* 已访问的链接 */
+a:hover {color: #FF3300;text-decoration: none;} /* 鼠标在链接上 */ 
+a:active {color: #000000;text-decoration: none;} /* 点击激活链接 */
+/*放大*/
+a.fangda:link{ width:60px; height:51px; line-height:51px; padding-left:35px; background:url(../images/gistype1_11.gif) no-repeat; font-size:14px; font-weight:bolder; display:block;}
+a.fangda:visited{width:60px; height:51px; line-height:51px; padding-left:35px; background:url(../images/gistype1_11.gif) no-repeat; font-size:14px; font-weight:bolder; display:block;}
+a.fangda:hover{width:60px; height:51px; line-height:51px; padding-left:35px; background:url(../images/gisover_11.gif) no-repeat; font-size:14px; font-weight:bolder; display:block;}
+a.fangda:active{width:60px; height:51px; line-height:51px; padding-left:35px; background:url(../images/gisactive_11.gif) no-repeat; font-size:14px; font-weight:bolder; display:block;}
+/*缩小*/
+a.suoxiao:link{ width:64px; height:51px; line-height:51px; padding-left:35px; background:url(../images/gistype1_12.gif) no-repeat; font-size:14px; font-weight:bolder; display:block;}
+a.suoxiao:visited{width:64px; height:51px; line-height:51px; padding-left:35px; background:url(../images/gistype1_12.gif) no-repeat; font-size:14px; font-weight:bolder; display:block;}
+a.suoxiao:hover{width:64px; height:51px; line-height:51px; padding-left:35px; background:url(../images/gisover_12.gif) no-repeat; font-size:14px; font-weight:bolder; display:block;}
+a.suoxiao:active{width:64px; height:51px; line-height:51px; padding-left:35px; background:url(../images/gisactive_12.gif) no-repeat; font-size:14px; font-weight:bolder; display:block;}
+/*漫游*/
+a.manyou:link{ width:66px; height:51px; line-height:51px; padding-left:35px; background:url(../images/gistype1_13.gif) no-repeat; font-size:14px; font-weight:bolder; display:block;}
+a.manyou:visited{width:66px; height:51px; line-height:51px; padding-left:35px; background:url(../images/gistype1_13.gif) no-repeat; font-size:14px; font-weight:bolder; display:block;}
+a.manyou:hover{width:66px; height:51px; line-height:51px; padding-left:35px; background:url(../images/gisover_13.gif) no-repeat; font-size:14px; font-weight:bolder; display:block;}
+a.manyou:active{width:66px; height:51px; line-height:51px; padding-left:35px; background:url(../images/gisactive_13.gif) no-repeat; font-size:14px; font-weight:bolder; display:block;}
+/*全图*/
+a.quantu:link{ width:66px; height:51px; line-height:51px; padding-left:35px; background:url(../images/gistype1_14.gif) no-repeat; font-size:14px; font-weight:bolder; display:block;}
+a.quantu:visited{width:66px; height:51px; line-height:51px; padding-left:35px; background:url(../images/gistype1_14.gif) no-repeat; font-size:14px; font-weight:bolder; display:block;}
+a.quantu:hover{width:66px; height:51px; line-height:51px; padding-left:35px; background:url(../images/gisover_14.gif) no-repeat; font-size:14px; font-weight:bolder; display:block;}
+a.quantu:active{width:66px; height:51px; line-height:51px; padding-left:35px; background:url(../images/gisactive_14.gif) no-repeat; font-size:14px; font-weight:bolder; display:block;}
+/*查询*/
+a.chaxun:link{ width:64px; height:51px; line-height:51px; padding-left:35px; background:url(../images/gistype1_15.gif) no-repeat; font-size:14px; font-weight:bolder; display:block;}
+a.chaxun:visited{width:64px; height:51px; line-height:51px; padding-left:35px; background:url(../images/gistype1_15.gif) no-repeat; font-size:14px; font-weight:bolder; display:block;}
+a.chaxun:hover{width:64px; height:51px; line-height:51px; padding-left:35px; background:url(../images/gisover_15.gif) no-repeat; font-size:14px; font-weight:bolder; display:block;}
+a.chaxun:active{width:64px; height:51px; line-height:51px; padding-left:35px; background:url(../images/gisactive_15.gif) no-repeat; font-size:14px; font-weight:bolder; display:block;}
+/*打印*/
+a.dayin:link{ width:65px; height:51px; line-height:51px; padding-left:35px; background:url(../images/gistype1_16.gif) no-repeat; font-size:14px; font-weight:bolder; display:block;}
+a.dayin:visited{width:65px; height:51px; line-height:51px; padding-left:35px; background:url(../images/gistype1_16.gif) no-repeat; font-size:14px; font-weight:bolder; display:block;}
+a.dayin:hover{width:65px; height:51px; line-height:51px; padding-left:35px; background:url(../images/gisover_16.gif) no-repeat; font-size:14px; font-weight:bolder; display:block;}
+a.dayin:active{width:65px; height:51px; line-height:51px; padding-left:35px; background:url(../images/gisactive_16.gif) no-repeat; font-size:14px; font-weight:bolder; display:block;}
+/*刷新*/
+a.shuaxin:link{ width:64px; height:51px; line-height:51px; padding-left:35px; background:url(../images/gistype1_17.gif) no-repeat; font-size:14px; font-weight:bolder; display:block;}
+a.shuaxin:visited{width:64px; height:51px; line-height:51px; padding-left:35px; background:url(../images/gistype1_17.gif) no-repeat; font-size:14px; font-weight:bolder; display:block;}
+a.shuaxin:hover{width:64px; height:51px; line-height:51px; padding-left:35px; background:url(../images/gisover_17.gif) no-repeat; font-size:14px; font-weight:bolder; display:block;}
+a.shuaxin:active{width:64px; height:51px; line-height:51px; padding-left:35px; background:url(../images/gisactive_17.gif) no-repeat; font-size:14px; font-weight:bolder; display:block;}

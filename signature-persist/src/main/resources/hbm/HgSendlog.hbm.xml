@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.juicy.signature.persist.po">
+	<class
+		name="HgSendlog"
+		table="HG_SENDLOG"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="Id"
+			type="integer"
+			column="SENDLOG_ID"
+		>
+			<generator class="sequence"/>
+		</id>
+
+		<property
+			name="CustomerId"
+			column="CUSTOMER_ID"
+			type="integer"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="SendruleId"
+			column="SENDRULE_ID"
+			type="integer"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="CallingTime"
+			column="CALLING_TIME"
+			type="timestamp"
+			not-null="false"
+			length="23"
+		/>
+		<property
+			name="SmSubmitTime"
+			column="SM_SUBMIT_TIME"
+			type="timestamp"
+			not-null="false"
+			length="23"
+		/>
+		<property
+			name="ResponseTime"
+			column="RESPONSE_TIME"
+			type="timestamp"
+			not-null="false"
+			length="23"
+		/>
+		<property
+			name="ReceiveTime"
+			column="RECEIVE_TIME"
+			type="timestamp"
+			not-null="false"
+			length="23"
+		/>
+		<property
+			name="Receivernumber"
+			column="RECEIVERNUMBER"
+			type="string"
+			not-null="false"
+			length="15"
+		/>
+		<property
+			name="Sendresult"
+			column="SENDRESULT"
+			type="integer"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="CallingImsi"
+			column="CALLING_IMSI"
+			type="string"
+			not-null="false"
+			length="24"
+		/>
+		<property
+			name="CallingHlr"
+			column="CALLING_HLR"
+			type="string"
+			not-null="false"
+			length="24"
+		/>
+		<property
+			name="CalledNumber"
+			column="CALLED_NUMBER"
+			type="string"
+			not-null="false"
+			length="20"
+		/>
+		<property
+			name="Lac"
+			column="LAC"
+			type="integer"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="Ci"
+			column="CI"
+			type="integer"
+			not-null="false"
+			length="10"
+		/>
+
+
+	</class>	
+</hibernate-mapping>

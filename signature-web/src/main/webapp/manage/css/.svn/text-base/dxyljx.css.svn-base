@@ -1,0 +1,916 @@
+* {
+	padding:0px;
+	margin:0px;
+	font-size:12px;
+}
+/*base标签样式定义*/
+/*html{
+scrollbar-arrow-color: #85D6FF;
+scrollbar-3dlight-color: #3399CC; scrollbar-highlight-color: #85D6FF; scrollbar-face-color: #07BEFF; scrollbar-shadow-color: #3399CC; scrollbar-track-color: #85D6FF; scrollbar-darkshadow-color: #66CCFF;
+}*/
+/*html{
+SCROLLBAR-FACE-COLOR: #2b73f1; BACKGROUND: #0650d2; MARGIN: 0px; FONT: 9pt 宋体; SCROLLBAR-HIGHLIGHT-COLOR: #0650d2; SCROLLBAR-SHADOW-COLOR: #449ae8; SCROLLBAR-3DLIGHT-COLOR: #449ae8; SCROLLBAR-ARROW-COLOR: #02338a; SCROLLBAR-TRACK-COLOR: #0650d2; SCROLLBAR-DARKSHADOW-COLOR: #0650d2; TEXT-DECORATION: none; 
+}*/
+
+html, body {
+	background: #fff;
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+	height:100%;
+	width:100%;
+}
+html, body, input, textarea, select, button, td {
+	color: #000000;
+	font: normal 12px "宋体", "Lucida Grande", Tahoma, Verdana, Lucida, Arial, Helvetica, sans-serif, "";
+}
+body {
+	margin:0px;
+	padding:0px;
+	width:100%;
+	text-align:center;
+
+}
+
+.td_title{
+	background-color:#CFEDFC;
+}
+
+
+
+
+input {
+	vertical-align:middle;
+}
+h1, h2, h3, h4, h5, h6, p, dl, dt, dd, td {
+	line-height: 150%;
+}
+h1, h2 {
+	clear: both;
+	font-size: 16px;
+	font-weight: bold;
+	margin: 8px;
+	text-align: center;
+	width: 100%;
+}
+h2 {
+	font-size: 14px;
+}
+h3, h4 {
+	font-weight: bold;
+	font-size: 14px;
+	margin: 0px;
+}
+h4 {
+	font-size: 12px;
+}
+blockquote {
+	border-left: 1px dashed #ccc;
+	margin: 3px 3px 3px 10px;
+	padding: 3px 3px 3px 10px;
+}
+div {
+	margin: 0px;
+	padding: 0px;
+}
+form {
+	display: inline;
+	margin: 0px;
+	padding: 0px;
+}
+hr {
+	border: 0px dashed #d1d7dc;
+	border-top-width: 1px;
+	height: 0px;
+	margin: 8px 0px 8px 0px;
+	padding: 0px;
+}
+img, a img {
+	color: #fff;
+	vertical-align: middle;
+} /* trick to hide the border in Netscape 4 */
+@media all { /* hide the next rule from Netscape 4 */
+img, a img, a:link img, a:visited img {
+	color: inherit;
+	border: none;
+}/* undo the color change above */
+}
+/*base标签样式定义*/
+/*
+//显示属性
+display
+list-style
+position
+float
+clear
+
+//自身属性
+width
+height
+margin
+padding
+border
+background
+
+//文本属性
+color
+font
+text-decoration
+text-align
+vertical-align
+white-space
+other text
+content
+*/
+
+/*顶部logo定义*/
+#dxlogo_mbg {
+	width:100%;
+	height:72px;
+	background:url(../images/top_bg.jpg) repeat-x;
+}
+#dxlogo_rbg {
+	width:100%;
+	height:72px;
+	background:url(..../images/top60_05.jpg) right center no-repeat;
+}
+#dxlogo_lay {
+	float:left;
+	width:970px;
+	height:72px; /*margin:0 auto; background:url(../images/dxtop_05.jpg) right center no-repeat;*/
+}
+.dxlogo {
+	float:left;
+	width:357px;
+	height:70px;
+	background:url(../images/logo_v1.jpg) no-repeat;
+}
+.dxflash {
+	/*float:right;width:840px;*/
+line-height:101px;
+}
+/*导航*/
+#dxnav_bg {
+	width:100%;
+	height:40px;
+	background:url(../images/dxtop_08.jpg) repeat-x;
+}
+#dxmainbg {
+	width:100%;
+	height:40px;
+	background:url(../images/dxtop_07.jpg) -215px top no-repeat;
+}
+#dxnav_lay {
+	float:left;
+	width:1200px;
+	height:40px; /*margin:0 auto; */
+}
+.ulnav {
+	padding-top:2px;
+}
+.ulnav li {
+	display:block;
+	list-style:none;
+	float:left;
+	height:38px;
+	/*padding:0 0 0 40px*/;
+	line-height:38px;
+	font-size:14px;
+	text-align:left;
+}
+/*
+
+* html p {color:#f00;}　　　支持 IE6        不支持FF IE7 IE8b
+*+html p {color:#f00;}　　　支持 IE7 IE8b        不支持FF IE6
+p {*color:#f00;}　　　　　　支持 IE7 IE6        不支持FF IE8b
+*/
+.btn_login_out{
+	line-height:21px;
+    text-align:center;
+    border:none;
+	width:51px;
+	height:21px;
+	color: #000;
+	font-size: 12px;
+	background:url(../images/login_admin_out.png) no-repeat center;
+
+	margin-top: 10px; margin-bottom: 10px;
+}
+
+
+
+.ulnav a {
+	font-size:14px;
+	font-weight:bolder;
+}
+
+.nav_user {
+    font-size:12px;
+	width:134px;
+	background:url(../images/login_admin_user_area.jpg) no-repeat;
+	
+	}
+	
+.nav_user_text{
+	margin-left:25px; float:left;
+	
+}
+	
+.nav_out {
+	margin: 0px auto 0px auto;
+font-size:12px;
+	width:51px;
+
+	
+	}
+
+
+.nav_dxyl {
+	margin-left:40px;
+	width:60px;
+}
+* html .nav_dxyl {
+	margin-left:25px;
+	width:60px;
+}
+.nav_dxsc {
+	margin-left:35px;
+	width:95px;
+}
+.nav_dxaq {
+	margin-left:35px;
+	width:80px;
+}
+.nav_dxsb {
+	margin-left:35px;
+	width:92px;
+}
+.nav_dxwx {
+	margin-left:35px;
+	width:92px;
+}
+.nav_dxzh {
+	margin-left:35px;
+	width:60px;
+}
+.nav_dxjc {
+	margin-left:35px;
+	width:60px;
+}
+.nav_dxxt {
+	margin-left:35px;
+	width:60px;
+}
+/* 导航链接未选中 */
+a.auselect {
+	color: #333333;
+	display:block;
+	height:38px;
+	line-height:38px;
+}
+a.auselect:link {
+	color: #353535;
+}
+a.auselect:visited {
+	color: #fff;
+}
+a.auselect:hover {
+	color: #fff;
+	background:url(../images/marrow_09yellow.gif) bottom center no-repeat;
+}
+a.auselect:active {
+	color:red;
+	background:url(../images/marrow_09red.gif) bottom center no-repeat;
+}
+/*选中状态*/
+a.aselect {
+	display:block;
+	color: #ffffff;
+	font-size:14px;
+	font-weight:bolder;
+	height:38px;
+	padding-top:0px;
+	line-height:38px;
+}
+a.aselect:link {
+	color: #ffffff;
+	background:url(../images/marrow_09.gif) bottom center no-repeat;
+}
+a.aselect:visited {
+	color:red;
+	background:url(../images/marrow_09.gif) bottom center no-repeat;
+}
+a.aselect:hover {
+	color: red;
+	background:url(../images/marrow_09red.gif) bottom center no-repeat;
+}
+a.aselect:active {
+	color: red;
+	background:url(../images/marrow_09red.gif) bottom center no-repeat;
+}
+/*链接效果与颜色定义*/
+a {
+	text-decoration: none;
+} /* 链接无下划线,有为underline */
+a:link {
+	color: #000000;
+	text-decoration: none;
+} /* 未访问的链接 */
+a:visited {
+	color: #000000;
+	text-decoration: none;
+} /* 已访问的链接 */
+a:hover {
+	color: #FF0000;
+	text-decoration: underline;
+} /* 鼠标在链接上 */
+a:active {
+	color: #000000;
+	text-decoration: none;
+} /* 点击激活链接 */
+
+
+/*分页文字链接效果与颜色定义*/
+.page_link a {
+	color: #0759B4;
+	text-decoration: none;
+} /* 链接无下划线,有为underline */
+.page_link a:link {
+	color: #0759B4;
+	text-decoration: underline;
+} /* 未访问的链接 */
+.page_link a:visited {
+	color: #0759B4;
+	text-decoration: none;
+} /* 已访问的链接 */
+.page_link a:hover {
+	color: #0759B4;
+	font-weight:bold;
+	text-decoration: underline;
+} /* 鼠标在链接上 */
+.page_link a:active {
+	color: #000000;
+	text-decoration: none;
+} /* 点击激活链接 */
+
+/* 栏目标题文字链接的CSS定义 */
+a.Class:link {
+	color: #ffffff;
+}
+a.Class:visited {
+	color: #ffffff;
+}
+a.Class:hover {
+	color: red;
+}
+a.Class:active {
+	color: #ffffff;
+}
+/*标题连接信息*/
+a.TitleStype:link {
+	color: red;
+}
+a.TitleStype:visited {
+	color: #666666;
+}
+a.TitleStype:hover {
+	color: #00CC00;
+}
+a.TitleStype:active {
+	color: #FFCC00;
+}
+/*内容页顶部背景定义*/
+#body_top_bg {
+	width:100%;
+	background:url(../images/dxtop_10.jpg) top left repeat-x;
+}
+#body_right_bg {
+	width:100%;
+	background:url(../images/dxtop_091.jpg) top right no-repeat;
+}
+/*位子导航*/
+#postion_nav {
+	height:30px;
+	line-height:30px;
+	padding:0 0 0 5px;
+	text-align:left;
+}
+/*查询 操作按钮区域*/
+.action_area {
+	text-align:left;
+	clear:both;
+	background-color:#E4F5FE;
+	margin:4px 2px 2px 2px;
+	border:1px #4DA9D7 solid;
+	height:auto;
+}
+.action_area td {
+	height:24px;
+	line-height:24px;
+}
+/*查询区域*/
+.searchform td {
+	height:24px;
+	line-height:24px;
+}
+.sbox_topleft {
+	background:url(../images/searchbox_03.gif) left top no-repeat;
+	margin:5px auto;
+}
+.sbox_topright {
+	background:url(../images/searchbox_04.gif) right top no-repeat;
+	margin-left:8px;
+	padding:8px 0px 0px 0px;
+}
+.sbox_bootright {
+	background:url(../images/searchbox_07.gif) bottom right no-repeat;
+}
+.sbox_bootleft {
+	background:url(../images/searchbox_06.gif) bottom left no-repeat;
+	margin-left:-8px;
+	padding:0px;
+}
+/*标签区域*/
+/*标签*/
+
+/*背景框*/
+
+
+/*表单 列表 内容区域*/
+.content {
+	margin:2px 2px 2px 2px;
+}
+.actionsearch {
+	text-align:left;
+	clear:both;
+	background-color:#E4F5FE;
+	margin:4px 2px 2px 2px;
+	border:1px #4DA9D7 solid;
+	height:auto;
+}
+/*表格列表样式--listtable*/
+.listtable {
+	background:#4DA9D7;
+	word-wrap:break-word;
+	width:100%;
+}
+/*07C1F5*/
+.listtable caption {
+	border-left:1px #4DA9D7 solid;
+	border-right:1px #4DA9D7 solid;
+	border-top:1px #4DA9D7 solid;
+	height:32px;
+	line-height:32px;
+	background:url(../images/table_03.gif);
+	background:url(../images/table_03.jpg);
+	color: #052223;
+	font-size:12px;
+	font-weight:bolder;
+}
+.listtable thead th {
+	height:25px;
+	line-height:25px;
+	background-color:#CFEDFC;
+}/*A5F7FA由于colgroup 定义了背景 th没定义 会因浏览器不同解析不同*/
+/*IE,Opera,Netscape会使用colgroup 定义的背景  MOZ系列的不会 非WIN系统浏览未测试 */
+ .listtable th {
+	height:20px;
+	line-height:20px;
+	background-color:#CFEDFC;
+}
+.listtable tbody td {
+	height:25px;
+	line-height:25px;
+	padding-left:3px;
+	padding-right:2px;
+}
+.listtable tbody tr {
+	background-color:#FFFFFF;
+	padding-right:2px;
+}
+.listtable tfoot td {
+	height:25px;
+	line-height:25px;
+	background-color:#CFEDFC;
+}
+/*链接颜色*/
+.list_aselect a {
+	color:#0066FF;
+	text-decoration:underline;
+	font-size:12px;
+}
+/*.listtable colgroup.g1 .c1{ text-align:center;}
+.listtable colgroup.g1 .c2{ background-color :Lime; width : 100px;}
+.listtable colgroup.g1 .c3{ background-color :Green; width : 140px;}
+.listtable colgroup.g2{*/
+ /*background:Teal url("http://rotui.net/images/bg.jpg") repeat top center;*/
+/* width : 200px;*/
+ /* IE only start */
+ /* 非IE的浏览器都不支持非width background以外的定义 */
+/* color : White;
+ text-align : right;*/
+ /* IE only end */
+/*}*/
+/*列表信息样式结束*/
+/*Start From table CSS*/
+
+/*表格列表样式--listtable*/
+.content_table {
+	background:#4DA9D7;
+	word-wrap:break-word;
+	width:100%;
+}
+/*07C1F5*/
+.content_table caption {
+	border-left:1px #4DA9D7 solid;
+	border-right:1px #4DA9D7 solid;
+	border-top:1px #4DA9D7 solid;
+	height:32px;
+	line-height:32px;
+	background:url(../images/table2_03.gif);
+	color: #052223;
+	font-size:14px;
+	font-weight:bolder;
+}
+.content_table thead th {
+	height:35px;
+	line-height:35px;
+	background-color:#CFEDFC;
+}/*A5F7FA由于colgroup 定义了背景 th没定义 会因浏览器不同解析不同*/
+/*IE,Opera,Netscape会使用colgroup 定义的背景  MOZ系列的不会 非WIN系统浏览未测试 */
+ .content_table th {
+	height:20px;
+	line-height:20px;
+	background-color:#CFEDFC;
+}
+.content_table tbody td {
+	height:28px;
+	line-height:28px;
+	padding-left:3px;
+	padding-right:2px;
+}
+.content_table tbody tr {
+	background-color:#FFFFFF;
+	padding-right:2px;
+}
+.content_table tfoot td {
+	height:35px;
+	line-height:25px;
+	background-color:#CFEDFC;
+}
+/*.listtable colgroup.g1 .c1{ text-align:center;}
+.listtable colgroup.g1 .c2{ background-color :Lime; width : 100px;}
+.listtable colgroup.g1 .c3{ background-color :Green; width : 140px;}
+.listtable colgroup.g2{*/
+ /*background:Teal url("http://rotui.net/images/bg.jpg") repeat top center;*/
+/* width : 200px;*/
+ /* IE only start */
+ /* 非IE的浏览器都不支持非width background以外的定义 */
+/* color : White;
+ text-align : right;*/
+ /* IE only end */
+/*}*/
+/*列表信息样式结束*/
+/*Start From table CSS*/
+.fromtable {
+	background: #0650D2;
+	width:99%;
+	word-wrap:break-word;
+	margin:4px 2px 2px 2px;
+}
+.fromtable caption {
+	border-left:1px #019BFF solid;
+	border-right:1px #019BFF solid;
+	border-top:1px #019BFF solid;
+	height:32px;
+	line-height:32px;
+	background:url(../images/table_headbg.jpg);
+	color:fff;
+	font:18px;
+	font-weight:bolder;
+	color: #333333;
+}
+.fromtable thead th {
+	height:25px;
+	line-height:25px;
+	background-color: #0099FF;
+}/*由于colgroup 定义了背景 th没定义 会因浏览器不同解析不同*/
+/*IE,Opera,Netscape会使用colgroup 定义的背景  MOZ系列的不会 非WIN系统浏览未测试 */
+ .fromtable th {
+	height:25px;
+	line-height:25px;
+	background-color: #33CCFF;
+	color:#FFFFFF;
+}
+.fromtable tbody td {
+	height:20px;
+	line-height:20px;
+	background-color :#fff;
+	padding:2px;
+}
+.fromtable tfoot td {
+	text-align:center;
+	height:25px;
+	line-height:25px;
+	background-color:#449AE8;
+}
+.fromtable colgroup.g1 .c1 {
+	text-align:right;
+}
+.fromtable colgroup.g1 .c2 {
+	text-align:left;
+	background-color :Lime;
+}
+.fromtable colgroup.g1 .c3 {
+	background-color :Green;
+	width : 140px;
+}
+.fromtable colgroup.g2 {
+	/*background:Teal url("http://rotui.net/images/bg.jpg") repeat top center;*/
+ width : 200px;
+	/* IE only start */
+
+ /* 非IE的浏览器都不支持非width background以外的定义 */
+ color : White;
+	text-align : right;/* IE only end */
+}
+/*End From table CSS*/
+
+
+.search114 {
+	width:100%;
+	margin:2px;
+	border:1px solid #33CCFF;
+	background: #AEEDFB;
+	height:auto;
+}
+.search {
+	text-align:right;
+	clear:both;
+	background-color:#E7FCFF;
+	width:98%;
+	margin:4px 2px 2px 2px;
+	border:1px #0099FF solid;
+	padding-left:7px;
+}
+/*系统操作按钮*/
+.b_chaxun {
+	padding:0px 0px 0px 5px;
+	height:24px;
+	line-height:24px;
+	text-align:center;
+	border:none;
+	width:58px;
+	color: #333333;
+	font-size: 12px;
+	background:url(../images/buttonx_160.gif) no-repeat center;
+}
+.b_tianjia {
+	padding:0px 0px 0px 10px;
+	height:24px;
+	line-height:24px;
+	text-align:center;
+	border:none;
+	width:58px;
+	color: #333333;
+	font-size: 12px;
+	background:url(../images/buttonx_159.gif) no-repeat center;
+}
+.b_tianjia4 {
+	padding:0px 0px 0px 10px;
+	height:24px;
+	line-height:24px;
+	text-align:center;
+	border:none;
+	width:95px;
+	color: #333333;
+	font-size: 12px;
+	background:url(../images/buttonx_152.gif) no-repeat center;
+}
+.b_qingchu {
+	padding:0px 0px 0px 10px;
+	height:24px;
+	line-height:24px;
+	text-align:center;
+	border:none;
+	width:58px;
+	color: #333333;
+	font-size: 12px;
+	background:url(../images/clearb.gif) no-repeat center;
+	padding-top:1px;
+}
+.b_fanhui {
+	padding:0px 0px 0px 10px;
+	height:24px;
+	line-height:24px;
+	text-align:center;
+	border:none;
+	width:58px;
+	color: #333333;
+	font-size: 12px;
+	background:url(../images/buttonx_140.gif) no-repeat center;
+	padding-top:1px;
+}
+.b_shanchu {
+	padding:0px 0px 0px 10px;
+	height:24px;
+	line-height:24px;
+	text-align:center;
+	border:none;
+	width:58px;
+	color: #333333;
+	font-size: 12px;
+	background:url(../images/buttonx_151.gif) no-repeat center;
+	padding-top:1px;
+}
+.b_operam {
+	padding:0px 0px 0px 17px;
+	height:24px;
+	line-height:24px;
+	text-align:center;
+	border:none;
+	width:122px;
+	color: #333333;
+	font-size: 12px;
+	background:url(../images/dxbutton_30.gif) no-repeat center;
+	padding-top:1px;
+}
+/*报表相关*/
+.b_print {
+	padding:0px 0px 0px 10px;
+	height:24px;
+	line-height:24px;
+	text-align:center;
+	border:none;
+	width:59px;
+	color: #333333;
+	font-size: 12px;
+	background:url(../images/dc_165.gif) no-repeat center;
+}
+.b_excel {
+	padding:0px 0px 0px 10px;
+	height:24px;
+	line-height:24px;
+	text-align:center;
+	border:none;
+	width:59px;
+	color: #333333;
+	font-size: 12px;
+	background:url(../images/dc_169.gif) no-repeat center;
+}
+.b_pdf {
+	padding:0px 0px 0px 10px;
+	height:24px;
+	line-height:24px;
+	text-align:center;
+	border:none;
+	width:59px;
+	color: #333333;
+	font-size: 12px;
+	background:url(../images/dc_174.gif) no-repeat center;
+}
+.b_word {
+	padding:0px 0px 0px 10px;
+	height:24px;
+	line-height:24px;
+	text-align:center;
+	border:none;
+	width:59px;
+	color: #333333;
+	font-size: 12px;
+	background:url(../images/dc_179.gif) no-repeat center;
+}
+/*报表相关结束*/
+
+.b_tj {
+	padding:0px 0px 0px 15px;
+	height:24px;
+	line-height:24px;
+	text-align:center;
+	border:none;
+	width:58px;
+	color: #333333;
+	font-size: 12px;
+	background:url(../images/buttonx_146.gif) no-repeat center;
+	padding-top:1px;
+}
+.b_2 {
+	padding:0px 0px 0px 0px;
+	height:24px;
+	line-height:24px;
+	text-align:center;
+	border:none;
+	width:39px;
+	color: #333333;
+	font-size: 12px;
+	background:url(../images/buttonx_163.gif) no-repeat center;
+	padding-top:1px;
+}
+.b_3 {
+	padding:0px 0px 0px 0px;
+	height:24px;
+	line-height:24px;
+	text-align:center;
+	border:none;
+	width:54px;
+	color: #333333;
+	font-size: 12px;
+	background:url(../images/buttonx_166.gif) no-repeat center;
+	padding-top:1px;
+}
+.b_4 {
+	padding:0px 0px 0px 0px;
+	height:24px;
+	line-height:24px;
+	text-align:center;
+	border:none;
+	width:68px;
+	color: #333333;
+	font-size: 12px;
+	background:url(../images/buttonx_169.gif) no-repeat center;
+	padding-top:1px;
+}
+.b_5 {
+	padding:0px 0px 0px 0px;
+	height:24px;
+	line-height:24px;
+	text-align:center;
+	border:none;
+	width:79px;
+	color: #333333;
+	font-size: 12px;
+	background:url(../images/buttonx_172.gif) no-repeat center;
+	padding-top:1px;
+}
+.b_6 {
+	padding:0px 0px 0px 0px;
+	height:24px;
+	line-height:24px;
+	text-align:center;
+	border:none;
+	width:95px;
+	color: #333333;
+	font-size: 12px;
+	background:url(../images/buttonx_175.gif) no-repeat center;
+	padding-top:1px;
+}
+.b_7 {
+	padding:0px 0px 0px 0px;
+	height:24px;
+	line-height:24px;
+	text-align:center;
+	border:none;
+	width:105px;
+	color: #333333;
+	font-size: 12px;
+	background:url(../images/buttonx_178.gif) no-repeat center;
+	padding-top:1px;
+}
+.b_8 {
+	padding:0px 0px 0px 0px;
+	height:24px;
+	line-height:24px;
+	text-align:center;
+	border:none;
+	width:118px;
+	color: #333333;
+	font-size: 12px;
+	background:url(../images/buttonx_181.gif) no-repeat center;
+	padding-top:1px;
+}
+.b_9 {
+	padding:0px 0px 0px 0px;
+	height:24px;
+	line-height:24px;
+	text-align:center;
+	border:none;
+	width:146px;
+	color: #333333;
+	font-size: 12px;
+	background:url(../images/bgif_125.gif) no-repeat center;
+	padding-top:1px;
+}
+.b_10 {
+	padding:0px 0px 0px 0px;
+	height:24px;
+	line-height:24px;
+	text-align:center;
+	border:none;
+	width:159px;
+	color: #333333;
+	font-size: 12px;
+	background:url(../images/bgif_128.gif) no-repeat center;
+	padding-top:1px;
+}
+.b_11 {
+	padding:0px 0px 0px 0px;
+	height:24px;
+	line-height:24px;
+	text-align:center;
+	border:none;
+	width:174px;
+	color: #333333;
+	font-size: 12px;
+	background:url(../images/bgif_131.gif) no-repeat center;
+	padding-top:1px;
+}

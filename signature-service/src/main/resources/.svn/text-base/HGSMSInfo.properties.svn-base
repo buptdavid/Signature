@@ -1,0 +1,5 @@
+##\u516c\u53f8
+##webserviceaddress = 192.168.200.67:8083
+##\u73b0\u573a
+webserviceaddress = 10.172.151.195:3086
+smschannel = 62101000

@@ -1,0 +1,12 @@
+2011-08-16 13:54:38  [ main:14808 ] - [ ERROR ]  Unsuccessful: alter table HG_DIY_INFO add id int
+2011-08-16 13:54:38  [ main:14839 ] - [ ERROR ]  ALTER TABLE 'HG_DIY_INFO' failed. Default clause is required in order to add non-NULL column 'id'.
+
+2011-08-16 13:54:38  [ main:14839 ] - [ ERROR ]  Unsuccessful: alter table HG_DIY_INFO add constraint FKF0C90CD9BAE32BCC foreign key (id) references SIGNATURE_ORIGINAL
+2011-08-16 13:54:38  [ main:14839 ] - [ ERROR ]  Column name 'id' does not exist in target table.
+
+2011-08-16 13:55:13  [ main:15184 ] - [ ERROR ]  Unsuccessful: alter table HG_DIY_INFO add id int
+2011-08-16 13:55:13  [ main:15184 ] - [ ERROR ]  ALTER TABLE 'HG_DIY_INFO' failed. Default clause is required in order to add non-NULL column 'id'.
+
+2011-08-16 13:55:13  [ main:15199 ] - [ ERROR ]  Unsuccessful: alter table HG_DIY_INFO add constraint FKF0C90CD9BAE32BCC foreign key (id) references SIGNATURE_ORIGINAL
+2011-08-16 13:55:13  [ main:15199 ] - [ ERROR ]  Column name 'id' does not exist in target table.
+

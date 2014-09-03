@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.juicy.signature.persist.po">
+	<class
+		name="HgRegioncodeReflect"
+		table="HG_REGIONCODE_REFLECT"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="Id"
+			type="integer"
+			column="REGIONCODE_ID"
+		>
+			<generator class="sequence"/>
+		</id>
+
+		<property
+			name="RegioncodeName"
+			column="REGIONCODE_NAME"
+			type="string"
+			not-null="false"
+			length="20"
+		/>
+		<property
+			name="BscMscBit"
+			column="BSC_MSC_BIT"
+			type="string"
+			not-null="false"
+			length="20"
+		/>
+		<property
+			name="Regioncode"
+			column="REGIONCODE"
+			type="string"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="ProtocolType"
+			column="PROTOCOL_TYPE"
+			type="integer"
+			not-null="false"
+			length="10"
+		/>
+
+
+	</class>	
+</hibernate-mapping>

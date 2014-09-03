@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.juicy.signature.persist.po">
+	<class
+		name="HgManager"
+		table="HG_MANAGER"
+	>
+		<meta attribute="sync-DAO">false</meta>
+
+		<id
+			name="Id"
+			type="integer"
+			column="MANAGER_ID"
+		>
+		</id>
+		<property
+			name="RegionId"
+			column="REGION_ID"
+			type="integer"
+			not-null="true"
+			length="10"
+		/>
+		<property
+			name="UserId"
+			column="USER_ID"
+			type="integer"
+			not-null="true"
+			length="10"
+		/>
+		<property
+			name="ManagerName"
+			column="MANAGER_NAME"
+			type="string"
+			not-null="false"
+			length="20"
+		/>
+		<property
+			name="ManagerType"
+			column="MANAGER_TYPE"
+			type="integer"
+			not-null="true"
+			length="10"
+		/>
+		<property
+			name="ManagerMobilenumber"
+			column="MANAGER_MOBILENUMBER"
+			type="string"
+			not-null="false"
+			length="15"
+		/>
+		<property
+			name="ManagerEmail"
+			column="MANAGER_EMAIL"
+			type="string"
+			not-null="false"
+			length="30"
+		/>
+
+
+	</class>	
+</hibernate-mapping>

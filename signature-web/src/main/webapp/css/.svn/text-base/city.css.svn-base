@@ -1,0 +1,177 @@
+.sub01 {
+	BACKGROUND: #fff
+}
+.map {
+	POSITION: relative; MARGIN: 0px 0px 0px 20px; WIDTH: 925px; BACKGROUND: url(../images/city_img/map.jpg) no-repeat; HEIGHT: 598px
+}
+.map A {
+	POSITION: absolute; PADDING-LEFT: 20px; WIDTH: 50px; DISPLAY: block; HEIGHT: 20px
+}
+.map A:link {
+	BACKGROUND: url(../images/list_style_icon.gif) no-repeat 0px -38px; COLOR: #000; FONT-SIZE: 12px; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+.map A:visited {
+	BACKGROUND: url(../images/list_style_icon.gif) no-repeat 0px -38px; COLOR: #000; FONT-SIZE: 12px; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+.map A:hover {
+	BACKGROUND: url(../images/list_style_icon.gif) no-repeat 0px 0px; COLOR: red; FONT-SIZE: 14px; FONT-WEIGHT: bold
+}
+.map .hot_new {
+	POSITION: relative; TOP: 250px; LEFT: 445px
+}
+.map .hot_new2 {
+	POSITION: relative; TOP: 245px; LEFT: 530px
+}
+.map .hot_new3 {
+	POSITION: relative; TOP: 220px; LEFT: 510px
+}
+.map #a_gz {
+	TOP: 240px; LEFT: 455px
+}
+.map #a_fs {
+	TOP: 270px; LEFT: 440px
+}
+.map #a_dg {
+	TOP: 265px; LEFT: 505px
+}
+.map #a_zs {
+	TOP: 320px; LEFT: 470px
+}
+.map #a_zh {
+	TOP: 340px; LEFT: 485px
+}
+.map #a_sz {
+	TOP: 310px; LEFT: 525px
+}
+.map #a_hz {
+	TOP: 255px; LEFT: 575px
+}
+.map #a_zq {
+	TOP: 220px; LEFT: 335px
+}
+.map #a_yf {
+	TOP: 280px; LEFT: 315px
+}
+.map #a_jm {
+	TOP: 320px; LEFT: 385px
+}
+.map #a_yj {
+	TOP: 360px; LEFT: 300px
+}
+.map #a_mm {
+	TOP: 360px; LEFT: 230px
+}
+.map #a_zj {
+	TOP: 480px; LEFT: 140px
+}
+.map #a_qy {
+	TOP: 120px; LEFT: 385px
+}
+.map #a_sg {
+	TOP: 100px; LEFT: 495px
+}
+.map #a_hy {
+	TOP: 190px; LEFT: 585px
+}
+.map #a_mj {
+	TOP: 180px; LEFT: 685px
+}
+.map #a_sw {
+	TOP: 260px; LEFT: 660px
+}
+.map #a_jy {
+	TOP: 220px; LEFT: 700px
+}
+.map #a_st {
+	TOP: 210px; LEFT: 785px
+}
+.map #a_cz {
+	RIGHT: 80px; TOP: 180px
+}
+.sub01 A:link {
+	COLOR: #000; CURSOR: pointer; TEXT-DECORATION: none
+}
+.sub01 A:visited {
+	COLOR: #000; CURSOR: pointer; TEXT-DECORATION: none
+}
+.sub01 A:hover {
+	COLOR: #930; TEXT-DECORATION: none
+}
+.sub01 .tese {
+	BORDER-BOTTOM: #dfdada 1px solid; BORDER-LEFT: #dfdada 1px solid; WIDTH: 919px; BACKGROUND: #f5f7fb; HEIGHT: 140px; MARGIN-LEFT: 20px; BORDER-TOP: #dfdada 1px solid; BORDER-RIGHT: #dfdada 1px solid
+}
+.sub01 .tese UL {
+	PADDING-BOTTOM: 0px; LIST-STYLE-TYPE: none; MARGIN: 0px 5px 0px 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+.sub01 .tese UL LI {
+	PADDING-LEFT: 15px; DISPLAY: inline
+}
+.sub01 .tese UL LI IMG {
+	BORDER-BOTTOM: #ccc 1px solid; BORDER-LEFT: #ccc 1px solid; PADDING-BOTTOM: 3px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; BORDER-TOP: #ccc 1px solid; BORDER-RIGHT: #ccc 1px solid; PADDING-TOP: 3px
+}
+.sub01 .tese .tese_title {
+	BORDER-BOTTOM: #333 1px solid; PADDING-BOTTOM: 5px; MARGIN: 10px; WIDTH: 890px; HEIGHT: 15px; FONT-SIZE: 14px; FONT-WEIGHT: bold
+}
+.sub01 .board {
+	MARGIN: 30px 0px 0px 10px; WIDTH: 920px; HEIGHT: 200px
+}
+.sub01 .board_1 {
+	WIDTH: 446px; DISPLAY: inline; BACKGROUND: url(../images/city_img/board.gif); FLOAT: left; HEIGHT: 197px; MARGIN-LEFT: 10px
+}
+.sub01 .board_1 H4 {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; COLOR: #fff; FONT-SIZE: 16px; PADDING-TOP: 10px
+}
+.sub01 .board_1 UL {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 22px; LIST-STYLE-TYPE: none; MARGIN: 20px 0px 0px 40px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+.sub01 .board_1 SPAN {
+	WIDTH: 300px; TEXT-OVERFLOW: ellipsis; DISPLAY: block; WHITE-SPACE: nowrap; FLOAT: left; OVERFLOW: hidden; MARGIN-RIGHT: 10px
+}
+.sub01 .board_1 #more {
+	TEXT-ALIGN: right; PADDING-LEFT: 50px
+}
+.sub01 .left_sider {
+	MARGIN: 20px; WIDTH: 150px; DISPLAY: inline; FLOAT: left
+}
+.sub01 .left_sider IMG {
+	MARGIN-TOP: 20px
+}
+.sub01 .left_sider UL {
+	PADDING-BOTTOM: 0px; LIST-STYLE-TYPE: none; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; COLOR: #000; FONT-SIZE: 14px; FONT-WEIGHT: bold; PADDING-TOP: 0px
+}
+.sub01 .left_sider UL LI {
+	TEXT-ALIGN: center; LINE-HEIGHT: 30px; MARGIN-TOP: 10px; WIDTH: 150px; BACKGROUND: url(../images/botton.gif) no-repeat; HEIGHT: 30px
+}
+.sub01 .right_content {
+	DISPLAY: inline; FLOAT: left
+}
+.sub01 .right_content .breadcrumb {
+	BORDER-BOTTOM: #630 1px solid; PADDING-BOTTOM: 10px; PADDING-LEFT: 10px; WIDTH: 740px; PADDING-RIGHT: 10px; HEIGHT: 20px; FONT-SIZE: 14px; PADDING-TOP: 10px
+}
+.sub01 .right_box01 {
+	BORDER-BOTTOM: #ccc 1px solid; BORDER-LEFT: #ccc 1px solid; MARGIN-TOP: 20px; MIN-HEIGHT: 750px; WIDTH: 750px; BACKGROUND: #eefefc; HEIGHT: auto !important; OVERFLOW: hidden; BORDER-TOP: #ccc 1px solid; BORDER-RIGHT: #ccc 1px solid
+}
+.sub01 .right_box01 #ad_01 {
+	BORDER-BOTTOM: #ccc 1px solid; BORDER-LEFT: #ccc 1px solid; MARGIN: 20px 0px 0px 40px; BORDER-TOP: #ccc 1px solid; BORDER-RIGHT: #ccc 1px solid
+}
+.sub01 .right_box01 .right_box02 {
+	BORDER-BOTTOM: #ccc 1px solid; BORDER-LEFT: #ccc 1px solid; MARGIN: 20px 0px 0px 40px; WIDTH: 670px; BACKGROUND: #fff; HEIGHT: 480px; BORDER-TOP: #ccc 1px solid; BORDER-RIGHT: #ccc 1px solid
+}
+.sub01 .right_box01 .right_box02 UL {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 22px; LIST-STYLE-TYPE: none; MARGIN: 20px 0px 0px 40px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+.sub01 .right_box01 .right_box02 SPAN {
+	PADDING-LEFT: 20px; WIDTH: 520px; TEXT-OVERFLOW: ellipsis; DISPLAY: block; WHITE-SPACE: nowrap; BACKGROUND: url(../images/city_img/list_style_icon2.gif) no-repeat 0px 2px; FLOAT: left; HEIGHT: 18px; OVERFLOW: hidden
+}
+.sub01 .right_box01 #ad_02 {
+	BORDER-BOTTOM: #ccc 1px solid; BORDER-LEFT: #ccc 1px solid; MARGIN: 20px; FLOAT: right; BORDER-TOP: #ccc 1px solid; BORDER-RIGHT: #ccc 1px solid
+}
+.sub01 .right_box01 H3 {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+.sub01 .right_box01 .text {
+	LINE-HEIGHT: 20px; MARGIN: 20px 10px 10px; FONT-SIZE: 12px
+}
+.sub01 .right_box01 STRONG {
+	COLOR: #09f
+}

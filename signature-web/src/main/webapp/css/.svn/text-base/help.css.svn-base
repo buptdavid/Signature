@@ -1,0 +1,42 @@
+.help_left {
+	WIDTH: 199px; FLOAT: left; MARGIN-RIGHT: 9px
+}
+.help_left1 {
+	BORDER-BOTTOM: #b2d0ea 1px solid; BORDER-LEFT: #b2d0ea 1px solid; WIDTH: 198px; FLOAT: left; BORDER-TOP: #b2d0ea 1px solid; BORDER-RIGHT: #b2d0ea 1px solid
+}
+.help_left1_1 {
+	FLOAT: left
+}
+.help_left1_2 {
+	BACKGROUND-COLOR: #fff; WIDTH: 198px; FLOAT: left; HEIGHT: 58px; BORDER-TOP: #b2d0ea 1px solid; CURSOR: pointer
+}
+.help_left1_2_over {
+	BACKGROUND-IMAGE: url(../images/help_3.gif); WIDTH: 198px; FLOAT: left; HEIGHT: 58px; BORDER-TOP: #b2d0ea 1px solid; CURSOR: pointer
+}
+.help_left1_2_1 {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 30px; PADDING-RIGHT: 0px; FLOAT: left; PADDING-TOP: 5px
+}
+.help_left1_2_2 {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 15px; PADDING-RIGHT: 0px; FLOAT: left; COLOR: #285493; FONT-SIZE: 16px; FONT-WEIGHT: bold; PADDING-TOP: 20px
+}
+.help_right1 {
+	BACKGROUND-IMAGE: url(../images/mycmccqm_right2.gif); PADDING-BOTTOM: 0px; PADDING-LEFT: 16px; WIDTH: 735px; PADDING-RIGHT: 0px; FLOAT: left; HEIGHT: 22px; FONT-SIZE: 14px; FONT-WEIGHT: bold; PADDING-TOP: 8px
+}
+.help_right2 {
+	BACKGROUND-IMAGE: url(../images/help_bg.gif); BORDER-BOTTOM: #9ec0d1 1px solid; BORDER-LEFT: #9ec0d1 1px solid; PADDING-BOTTOM: 20px; BACKGROUND-COLOR: #fff; PADDING-LEFT: 30px; WIDTH: 689px; PADDING-RIGHT: 30px; BACKGROUND-REPEAT: repeat-x; FLOAT: left; BORDER-TOP: #9ec0d1 1px; BORDER-RIGHT: #9ec0d1 1px solid; PADDING-TOP: 30px
+}
+.help_right3 {
+	BORDER-BOTTOM: #599dd9 3px solid; PADDING-BOTTOM: 5px; BACKGROUND-COLOR: #d0eaff; PADDING-LEFT: 10px; WIDTH: 679px; MARGIN-BOTTOM: 10px; FLOAT: left; COLOR: #3581c2; FONT-SIZE: 14px; FONT-WEIGHT: bold; PADDING-TOP: 5px
+}
+.help_right4 {
+	PADDING-BOTTOM: 5px; LINE-HEIGHT: 24px; WIDTH: 689px; MARGIN-BOTTOM: 10px; FLOAT: left
+}
+.help_right5 {
+	PADDING-BOTTOM: 5px; LINE-HEIGHT: 24px; BACKGROUND-COLOR: #f6fbff; PADDING-LEFT: 10px; WIDTH: 669px; PADDING-RIGHT: 10px; FLOAT: left
+}
+.help_right6 {
+	WIDTH: 120px; FLOAT: left; MARGIN-RIGHT: 15px
+}
+.dotline {
+	BACKGROUND-IMAGE: url(../images/dot_line.gif); BACKGROUND-REPEAT: repeat-x; BACKGROUND-POSITION: 50% bottom
+}

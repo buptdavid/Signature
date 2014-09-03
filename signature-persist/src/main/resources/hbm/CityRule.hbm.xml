@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.juicy.signature.persist.po">
+	<class
+		name="CityRule"
+		table="CITY_RULE"
+	>
+		<meta attribute="sync-DAO">false</meta>
+
+		<id
+			name="Id"
+			type="integer"
+			column="id"
+		>
+		</id>
+		<property
+			name="Phone"
+			column="phone"
+			type="string"
+			not-null="false"
+			length="32"
+		/>
+		<property
+			name="CityCode"
+			column="city_code"
+			type="string"
+			not-null="false"
+			length="64"
+		/>
+		<property
+			name="CityName"
+			column="city_name"
+			type="string"
+			not-null="false"
+			length="64"
+		/>
+
+
+	</class>	
+</hibernate-mapping>

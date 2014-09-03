@@ -1,0 +1,998 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+	"http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+	<!-- 国际化资源文件 -->
+	<constant name="struts.custom.i18n.resources" value="resource" />
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<!-- 开启Struts2 动态方法 -->
+	<!-- <constant name="struts.enable.DynamicMethodInvocation" value="true"></constant> -->
+	<!-- 打开开发模式，上线时要去掉 -->
+	<!-- <constant name="struts.devMode" value="true" /> -->
+	<!-- 改变Struts2的访问后缀为html -->
+	<constant name="struts.action.extension" value="html" />
+
+	<!-- 门户前台，继承json-default -->
+	<package name="default" extends="json-default">
+		<interceptors>
+			<!-- 配置用户的权限检查拦截器 -->
+			<interceptor name="userAuth"
+				class="com.juicy.signature.action.authority.UserAuthorityInterceptor" />
+
+			<!-- 配置用户的默认的拦截器栈 -->
+			<interceptor-stack name="userStack">
+				<interceptor-ref name="userAuth" />
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+		</interceptors>
+
+		<!-- 定义全局Result映射 -->
+		<global-results>
+			<!-- 定义sql、root两个异常对应的视图页 -->
+			<result name="business">error.jsp</result>
+			<!-- <result name="root">error.jsp</result> -->
+			<!-- 定义login逻辑视图对应的视图资源 -->
+			<result name="login">to_index.jsp</result>
+		</global-results>
+
+		<!-- 定义全局异常映射 -->
+		<global-exception-mappings>
+			<!-- 当Action中遇到SignatureException异常时， 系统将转入name为business的结果中 -->			
+			<exception-mapping
+				exception="com.juicy.signature.service.exception.SignatureServiceException"
+				result="business" />			
+			<!-- 当Action中遇到Exception异常时， 系统将转入name为root的结果中 -->
+			 <exception-mapping exception="java.lang.Exception"
+				result="root" />
+		</global-exception-mappings>
+		
+		<!-- 检查用户是否登录Action -->
+		<action name="check_session" class="com.juicy.signature.action.LoginAction" method="checkSession">
+			<!-- 配置类型为json的Result -->
+			<result type="json">
+				<!-- 为该Result指定参数 -->
+				<param name="noCache">true</param>
+				<!-- 返回的属性名 -->
+				<param name="IncludeProperties">success</param>
+			</result>
+		</action>
+
+		<!-- 用户密码登录Action -->
+		<action name="login_password" class="com.juicy.signature.action.LoginAction">
+			<!-- 配置类型为json的Result -->
+			<result type="json">
+				<!-- 为该Result指定参数 -->
+				<param name="noCache">true</param>
+				<!-- 返回的属性名 -->
+				<param name="IncludeProperties">success,message</param>
+			</result>
+		</action>
+
+		<!-- 用户发送短信随机码Action -->
+		<action name="send_code" class="com.juicy.signature.action.SendCodeAction">
+			<result type="json">
+				<param name="noCache">true</param>
+				<param name="IncludeProperties">success,message</param>
+			</result>
+		</action>
+
+		<!-- 用户短信随机码登录Action -->
+		<action name="login_code" class="com.juicy.signature.action.LoginAction"
+			method="loginByCode">
+			<result type="json">
+				<param name="noCache">true</param>
+				<param name="IncludeProperties">success,message</param>
+			</result>
+		</action>
+
+		<!-- 用户退出登录Action -->
+		<action name="logout" class="com.juicy.signature.action.LogoutAction">
+			<result type="json">
+				<param name="noCache">true</param>
+				<param name="IncludeProperties">success</param>
+			</result>
+		</action>
+
+		<!-- 显示用户的默认签名 -->
+		<action name="list_default" class="com.juicy.signature.action.ListDefaultAction">
+			<interceptor-ref name="userStack" />
+			<result name="success">list_default.jsp</result>
+		</action>
+
+		<!-- 创建用户默认签名规则Action,签名来源于用户自己输入 -->
+		<action name="create_default" class="com.juicy.signature.action.CreateDefaultAction">
+			<interceptor-ref name="userStack" />
+			<result name="success">success.jsp</result>
+		</action>
+
+		<!-- 创建用户默认签名规则Action，签名来源于签名宝库 -->
+		<action name="create_default_library" class="com.juicy.signature.action.CreateDefaultAction"
+			method="createByLibrary">
+			<interceptor-ref name="userStack" />
+			<result name="success">success.jsp</result>
+		</action>
+		
+		<!-- 将已有的签名设置为用户签名 -->
+		<action name="set_default" class="com.juicy.signature.action.CreateDefaultAction"
+			method="setDefault">
+			<interceptor-ref name="userStack" />
+			<result type="json">
+				<param name="noCache">true</param>
+				<param name="IncludeProperties">success,message</param>
+			</result>
+		</action>
+
+		<!-- 显示签名盒Action -->
+		<action name="view_library" class="com.juicy.signature.action.ViewLibraryAction">
+			<result>view_library.jsp</result>
+		</action>
+
+		<!-- 显示签名盒中签名Action -->
+		<action name="view_library_signature"
+			class="com.juicy.signature.action.ViewLibrarySignatureAction">
+			<result>view_library_signature.jsp</result>
+		</action>
+
+		<!-- 显示用户收藏中的签名盒Action -->
+		<action name="view_collect_library"
+			class="com.juicy.signature.action.ViewCollectLibraryAction">
+			<interceptor-ref name="userStack" />
+			<result>view_collect_library.jsp</result>
+		</action>
+		
+		<!-- 显示用户收藏中的签名Action -->
+		<action name="view_collect"
+			class="com.juicy.signature.action.ViewCollectAction">
+			<interceptor-ref name="userStack" />
+			<result>view_collect.jsp</result>
+		</action>
+		
+		<!-- 显示用户原创签名中的签名Action -->
+		<action name="view_original"
+			class="com.juicy.signature.action.ViewOriginalAction">
+			<interceptor-ref name="userStack" />
+			<result>view_original.jsp</result>
+		</action>
+		
+		<!-- 显示用户个性化签名规则Action -->
+		<action name="list_personalized"
+			class="com.juicy.signature.action.ListPersonalizedAction">
+			<interceptor-ref name="userStack" />
+			<result>list_personalized.jsp</result>
+		</action>
+		
+		<!-- 显示某个个性化签名的所有主叫手机号码 -->
+		<action name="view_numbers" class="com.juicy.signature.action.ViewNumbersAction">
+			<interceptor-ref name="userStack" />
+			<result>view_numbers.jsp</result>
+		</action>
+		
+		<!-- 显示创建个性化签名ACTION -->
+		<action name="view_personalized"
+			class="com.juicy.signature.action.ViewPersonalizedAction">
+			<interceptor-ref name="userStack" />
+			<result>view_personalized.jsp</result>
+		</action>
+
+		<!-- 创建用户个性化签名规则Action,签名来源于用户输入 -->
+		<action name="create_personalized"
+			class="com.juicy.signature.action.CreatePersonalizedAction">
+			<interceptor-ref name="userStack" />
+			<result>success.jsp</result>
+		</action>
+		
+		<!-- 创建用户个性化签名规则Action,签名来源于签名盒(宝库) -->
+		<action name="create_personalized_library"
+			class="com.juicy.signature.action.CreatePersonalizedAction" method="createByLibrary">
+			<interceptor-ref name="userStack" />
+			<result>success.jsp</result>
+		</action>
+		
+		<!-- 显示要更新的用户个性化签名规则Action -->
+		<action name="view_update_personalized"
+			class="com.juicy.signature.action.UpdatePersonalizedAction" method="view">
+			<interceptor-ref name="userStack" />
+			<result>view_update_personalized.jsp</result>
+		</action>
+		
+		<!-- 更新用户个性化签名规则Action -->
+		<action name="update_personalized"
+			class="com.juicy.signature.action.UpdatePersonalizedAction">
+			<interceptor-ref name="userStack" />
+			<result>success.jsp</result>
+		</action>
+
+		<!-- 删除用户个性化签名规则Action -->
+		<action name="delete_personalized"
+			class="com.juicy.signature.action.DeletePersonalizedAction">
+			<interceptor-ref name="userStack" />
+			<result type="chain">
+				<param name="actionName">list_personalized</param>
+			</result>
+		</action>
+		
+		<!-- 显示管理用户的原创签名Action -->
+		<action name="my_original"
+			class="com.juicy.signature.action.ViewOriginalAction">
+			<interceptor-ref name="userStack" />
+			<result>my_original.jsp</result>
+		</action>
+		
+		<!-- 显示添加用户原创签名ACTION -->
+		<action name="view_create_original"
+			class="com.juicy.signature.action.CreateOriginalAction" method="view">
+			<interceptor-ref name="userStack" />
+			<result>create_original.jsp</result>
+		</action>
+		
+		<!-- 添加用户原创签名ACTION -->
+		<action name="create_original"
+			class="com.juicy.signature.action.CreateOriginalAction" >
+			<interceptor-ref name="userStack" />
+			<result type="chain">
+				<param name="actionName">my_original</param>
+			</result>
+		</action>
+		
+		<!-- 删除用户原创签名ACTION -->
+		<action name="delete_original"
+			class="com.juicy.signature.action.DeleteOriginalAction" >
+			<interceptor-ref name="userStack" />
+			<result type="chain">
+				<param name="actionName">my_original</param>
+			</result>
+		</action>
+		
+		<!-- 保存收藏 -->
+		<action name="save_collect" class="com.juicy.signature.action.MyCollectAction">
+			<interceptor-ref name="userStack" />
+			<result type="json">
+				<param name="noCache">true</param>
+				<param name="IncludeProperties">success,message</param>
+			</result>
+		</action>
+		
+		<!-- 显示用户收藏签名ACTION -->
+		<action name="my_collect"
+			class="com.juicy.signature.action.MyCollectAction" method="view">
+			<interceptor-ref name="userStack" />
+			<result>my_collect.jsp</result>
+		</action>
+		
+		<!-- 删除用户收藏签名ACTION -->
+		<action name="delete_collect"
+			class="com.juicy.signature.action.MyCollectAction" method="delete" >
+			<interceptor-ref name="userStack" />
+			<result type="chain">
+				<param name="actionName">my_collect</param>
+			</result>
+		</action>
+				
+		<!--管理黑白名单ACTION -->
+		<action name="manage_list"
+			class="com.juicy.signature.action.ManageListAction" method="view">
+			<interceptor-ref name="userStack" />
+			<result>manage_list.jsp</result>
+		</action>
+				
+		<!--设置黑白名单标志ACTION -->
+		<action name="set_black_white"
+			class="com.juicy.signature.action.ManageListAction" method="set">
+			<interceptor-ref name="userStack" />
+			<result type="chain">
+				<param name="actionName">manage_list</param>
+			</result>
+		</action>
+
+		<!--添加黑白名单ACTION -->
+		<action name="create_black_white"
+			class="com.juicy.signature.action.ManageListAction">
+			<interceptor-ref name="userStack" />
+			<result type="chain">
+				<param name="actionName">manage_list</param>
+			</result>
+		</action>
+		
+		<!--删除黑白名单ACTION -->
+		<action name="delete_black_white"
+			class="com.juicy.signature.action.ManageListAction" method="delete">
+			<interceptor-ref name="userStack" />
+			<result type="chain">
+				<param name="actionName">manage_list</param>
+			</result>
+		</action>
+		
+		<!--管理拒绝签名 -->
+		<action name="manage_refuse"
+			class="com.juicy.signature.action.ManageRefuseAction" method="view">
+			<interceptor-ref name="userStack" />
+			<result>manage_refuse.jsp</result>
+		</action>
+		
+		<!--添加拒绝签名 -->
+		<action name="create_refuse"
+			class="com.juicy.signature.action.ManageRefuseAction">
+			<interceptor-ref name="userStack" />
+			<result type="chain">
+				<param name="actionName">manage_refuse</param>
+			</result>
+		</action>
+		
+		<!--删除拒绝签名 -->
+		<action name="delete_refuse"
+			class="com.juicy.signature.action.ManageRefuseAction" method="delete">
+			<interceptor-ref name="userStack" />
+			<result type="chain">
+				<param name="actionName">manage_refuse</param>
+			</result>
+		</action>
+		
+		<!--显示用户信息 -->
+		<action name="my_info"
+			class="com.juicy.signature.action.UserAction" method="view">
+			<interceptor-ref name="userStack" />
+			<result>my_info.jsp</result>
+		</action>
+		
+		<!--更改用户信息 -->
+		<action name="update_info"
+			class="com.juicy.signature.action.UserAction">
+			<interceptor-ref name="userStack" />
+			<result type="chain">
+				<param name="actionName">my_info</param>
+			</result>
+		</action>
+		
+		<!-- 修改用户密码 -->
+		<action name="update_password"
+			class="com.juicy.signature.action.UserAction" method="updatePassword">
+			<interceptor-ref name="userStack" />
+			<result>success.jsp</result>
+		</action>
+		
+		<!-- 显示提意见 -->
+		<action name="suggest"
+			class="com.juicy.signature.action.UserAction" method="view">
+			<interceptor-ref name="userStack" />
+			<result>suggest.jsp</result>
+		</action>
+		
+		<!-- 提交意见 -->
+		<action name="submit_suggest"
+			class="com.juicy.signature.action.SuggestAction">
+			<interceptor-ref name="userStack" />
+			<result>success.jsp</result>
+		</action>
+		
+		<!-- 显示暂停重启业务 -->
+		<action name="business" class="com.juicy.signature.action.BusinessAction" method="view">
+			<interceptor-ref name="userStack" />
+			<result>business.jsp</result>
+		</action>
+		
+		<!-- 暂停业务 -->
+		<action name="pause"
+			class="com.juicy.signature.action.BusinessAction" >
+			<interceptor-ref name="userStack" />
+			<result type="chain">
+				<param name="actionName">business</param>
+			</result>
+		</action>
+		
+		<!-- 重启业务 -->
+		<action name="restart"
+			class="com.juicy.signature.action.BusinessAction" method="restart">
+			<interceptor-ref name="userStack" />
+			<result type="chain">
+				<param name="actionName">business</param>
+			</result>
+		</action>
+
+		<!-- 显示原创情景签名Action -->
+		<action name="original"
+			class="com.juicy.signature.action.OriginalAction">
+			<result>original.jsp</result>
+		</action>
+		
+		<!-- 根据分类显示原创情景签名Action -->
+		<action name="original_right"
+			class="com.juicy.signature.action.OriginalAction" method="view">
+			<result>original_right.jsp</result>
+		</action>
+		
+		<!-- 显示签名盒（宝库）签名Action -->
+		<action name="library"
+			class="com.juicy.signature.action.LibraryAction">
+			<result>library.jsp</result>
+		</action>
+		
+		<!-- 根据分类显示签名盒（宝库）签名Action -->
+		<action name="library_right"
+			class="com.juicy.signature.action.LibraryAction" method="view">
+			<result>library_right.jsp</result>
+		</action>
+		
+		<!-- 搜索签名Action -->
+		<action name="search"
+			class="com.juicy.signature.action.SearchAction">
+			<result>search.jsp</result>
+		</action>
+
+		<!-- 首页Action -->
+		<action name="index"
+			class="com.juicy.signature.action.IndexAction">
+			<result>index.jsp</result>
+		</action>
+		
+		<!-- 活动Action -->
+		<action name="activity"
+			class="com.juicy.signature.action.ActivityAction">
+			<result>activity.jsp</result>
+		</action>
+		
+		<!-- 显示活动详情Action -->
+		<action name="view_activity_detail"
+			class="com.juicy.signature.action.ActivityAction" method="view">
+			<result>view_activity.jsp</result>
+		</action>
+
+		<!-- 所有页面都通过Struts框架 -->
+		<action name="*">
+			<result>{1}.jsp</result>
+		</action>
+	</package>
+	
+	<!-- ******************************** 以下为后台管理Action ******************************** -->		
+	<!-- 管理后台,继承json-default -->
+	<package name="manage" extends="json-default">
+		<interceptors>
+			<!-- 配置管理员的权限检查拦截器 -->
+			<interceptor name="managerAuth"
+				class="com.juicy.signature.action.authority.ManagerAuthorityInterceptor" />
+				
+			<!-- 配置管理员的默认的拦截器栈 -->
+			<interceptor-stack name="managerStack">
+				<interceptor-ref name="managerAuth" />
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+		</interceptors>
+
+		<!-- 定义全局Result映射 -->
+		<global-results>
+			<!-- 定义sql、root两个异常对应的视图页 -->
+			<result name="business">error.jsp</result>
+			<result name="root">error.jsp</result>
+			<!-- 定义管理员manageLogin逻辑视图对应的视图资源 -->
+			<result name="manageLogin">to_index.jsp</result>
+		</global-results>
+
+		<!-- 定义全局异常映射 -->
+		<global-exception-mappings>
+			<!-- 当Action中遇到SignatureException异常时， 系统将转入name为business的结果中 -->			
+			<exception-mapping
+				exception="com.juicy.signature.service.exception.SignatureServiceException"
+				result="business" />			
+			<!-- 当Action中遇到Exception异常时， 系统将转入name为root的结果中 -->
+			<exception-mapping exception="java.lang.Exception"
+				result="root" />
+		</global-exception-mappings>
+		
+		<!-- 后台首页Action -->
+		<action name="manage/index">
+			<result>manage/index.jsp</result>
+		</action>
+		
+		<!-- 管理员登录 -->
+		<action name="manage_login" class="com.juicy.signature.action.manage.ManagerAction">
+			<!-- 配置类型为json的Result -->
+			<result type="json">
+				<!-- 为该Result指定参数 -->
+				<param name="noCache">true</param>
+				<!-- 返回的属性名 -->
+				<param name="IncludeProperties">success,message</param>
+			</result>
+		</action>
+		
+		<!-- 管理员退出 -->
+		<action name="manage_logout" class="com.juicy.signature.action.manage.ManagerAction" method="logout">
+			<interceptor-ref name="managerStack" />
+			<result>to_index.jsp</result>
+		</action>
+		
+		<!-- 显示精彩活动 -->
+		<action name="view_activity"
+			class="com.juicy.signature.action.manage.WonderfulActivityAction" method="view">
+			<interceptor-ref name="managerStack" />
+			<result>wonderful_activity.jsp</result>
+		</action>
+		
+		<!-- 取消精彩活动首页显示 -->
+		<action name="cancel_index"
+			class="com.juicy.signature.action.manage.WonderfulActivityAction">
+			<interceptor-ref name="managerStack" />
+			<result type="chain">
+				<param name="actionName">view_activity</param>
+			</result>
+		</action>
+		
+		<!-- 显示精彩签名 -->
+		<action name="view_wonderful"
+			class="com.juicy.signature.action.manage.WonderfulRecommendAction" method="view">
+			<interceptor-ref name="managerStack" />
+			<result>wonderful_signature.jsp</result>
+		</action>
+		
+		<!-- 取消精彩签名推荐 -->
+		<action name="delete_wonderful"
+			class="com.juicy.signature.action.manage.WonderfulRecommendAction">
+			<interceptor-ref name="managerStack" />
+			<result type="chain">
+				<param name="actionName">view_wonderful</param>
+			</result>
+		</action>
+		
+		<!-- 显示热门话题 -->
+		<action name="view_hot_topic"
+			class="com.juicy.signature.action.manage.HotTopicAction" method="view">
+			<interceptor-ref name="managerStack" />
+			<result>hot_topic.jsp</result>
+		</action>
+		
+		<!-- 删除热门话题 -->
+		<action name="delete_hot_topic"
+			class="com.juicy.signature.action.manage.HotTopicAction">
+			<interceptor-ref name="managerStack" />
+			<result type="chain">
+				<param name="actionName">view_hot_topic</param>
+			</result>
+		</action>
+		
+		<!-- 显示情景签名推荐 -->
+		<action name="view_scene"
+			class="com.juicy.signature.action.manage.SceneRecommendAction" method="view">
+			<interceptor-ref name="managerStack" />
+			<result>scene_signature.jsp</result>
+		</action>
+		
+		<!-- 删除情景签名推荐 -->
+		<action name="delete_scene"
+			class="com.juicy.signature.action.manage.SceneRecommendAction">
+			<interceptor-ref name="managerStack" />
+			<result type="chain">
+				<param name="actionName">view_scene</param>
+			</result>
+		</action>
+		
+		<!-- 显示签名盒推荐 -->
+		<action name="view_library_recommend"
+			class="com.juicy.signature.action.manage.LibraryRecommendAction" method="view">
+			<interceptor-ref name="managerStack" />
+			<result>library_recommend.jsp</result>
+		</action>
+		
+		<!-- 删除签名盒推荐 -->
+		<action name="delete_library_recommend"
+			class="com.juicy.signature.action.manage.LibraryRecommendAction">
+			<interceptor-ref name="managerStack" />
+			<result type="chain">
+				<param name="actionName">view_library_recommend</param>
+			</result>
+		</action>
+		
+		<!-- 显示今日排行榜 -->
+		<action name="view_rank"
+			class="com.juicy.signature.action.manage.RankAction" method="view">
+			<interceptor-ref name="managerStack" />
+			<result>rank.jsp</result>
+		</action>
+		
+		<!-- 删除今日排行榜 -->
+		<action name="delete_rank"
+			class="com.juicy.signature.action.manage.RankAction">
+			<interceptor-ref name="managerStack" />
+			<result type="chain">
+				<param name="actionName">view_rank</param>
+			</result>
+		</action>
+		
+		<!-- 显示一级分类 -->
+		<action name="view_first_class"
+			class="com.juicy.signature.action.manage.ClassManageAction" method="viewFirst">
+			<interceptor-ref name="managerStack" />
+			<result>class.jsp</result>
+		</action>
+		
+		<!-- 显示二级分类 -->
+		<action name="view_second_class"
+			class="com.juicy.signature.action.manage.ClassManageAction" method="viewSecond">
+			<interceptor-ref name="managerStack" />
+			<result>class.jsp</result>
+		</action>
+		
+		<!-- 删除分类 -->
+		<action name="delete_class"
+			class="com.juicy.signature.action.manage.ClassManageAction" method="delete">
+			<interceptor-ref name="managerStack" />
+			<result>success.jsp</result>
+		</action>
+		
+		<!-- 显示添加分类 -->
+		<action name="view_add_class"
+			class="com.juicy.signature.action.manage.ClassManageAction" method="viewAdd">
+			<interceptor-ref name="managerStack" />
+			<result>add_class.jsp</result>
+		</action>
+		
+		<!-- 添加分类,token -->
+		<action name="add_class"
+			class="com.juicy.signature.action.manage.ClassManageAction" method="add">
+			<interceptor-ref name="managerStack" />
+			<result type="chain">
+				<param name="actionName">view_add_class</param>
+			</result>
+		</action>
+		
+		<!-- 显示更新分类 -->
+		<action name="view_update_class"
+			class="com.juicy.signature.action.manage.ClassManageAction" method="viewUpdate">
+			<interceptor-ref name="managerStack" />
+			<result>update_class.jsp</result>
+		</action>
+		
+		<!-- 更新分类 -->
+		<action name="update_class"
+			class="com.juicy.signature.action.manage.ClassManageAction" method="update">
+			<interceptor-ref name="managerStack" />
+			<result>success.jsp</result>
+		</action>
+		
+		<!-- 显示所有原创签名 -->
+		<action name="view_all_original"
+			class="com.juicy.signature.action.manage.OriginalManageAction">
+			<interceptor-ref name="managerStack" />
+			<result>all_original.jsp</result>
+		</action>
+		
+		<!-- 推荐原创签名 -->
+		<action name="recommend_original"
+			class="com.juicy.signature.action.manage.OriginalManageAction" method="recommend">
+			<interceptor-ref name="managerStack" />
+			<result>success.jsp</result>
+		</action>
+		
+		<!-- 显示所有签名盒签名 -->
+		<action name="view_all_library"
+			class="com.juicy.signature.action.manage.LibraryManageAction">
+			<interceptor-ref name="managerStack" />
+			<result>all_library.jsp</result>
+		</action>
+		
+		<!-- 推荐签名盒签名 -->
+		<action name="recommend_library"
+			class="com.juicy.signature.action.manage.LibraryManageAction" method="recommend">
+			<interceptor-ref name="managerStack" />
+			<result>success.jsp</result>
+		</action>
+		
+		<!-- 显示添加签名盒签名 -->
+		<action name="view_add_library"
+			class="com.juicy.signature.action.manage.LibraryManageAction" method="viewAdd">
+			<interceptor-ref name="managerStack" />
+			<result>add_library.jsp</result>
+		</action>
+		
+		<!-- 添加签名盒签名,token -->
+		<action name="add_library"
+			class="com.juicy.signature.action.manage.LibraryManageAction" method="add">
+			<interceptor-ref name="managerStack" />
+			<result type="chain">
+				<param name="actionName">view_add_library</param>
+			</result>
+		</action>
+		
+		<!-- 显示添加签名盒签名 -->
+		<action name="view_update_library"
+			class="com.juicy.signature.action.manage.LibraryManageAction" method="viewUpdate">
+			<interceptor-ref name="managerStack" />
+			<result>update_library.jsp</result>
+		</action>
+		
+		<!-- 添加签名盒签名 -->
+		<action name="update_library"
+			class="com.juicy.signature.action.manage.LibraryManageAction" method="update">
+			<interceptor-ref name="managerStack" />
+			<result>success.jsp</result>
+		</action>
+		
+		<!-- 删除签名盒签名 -->
+		<action name="delete_library"
+			class="com.juicy.signature.action.manage.LibraryManageAction" method="delete">
+			<interceptor-ref name="managerStack" />
+			<result>success.jsp</result>
+		</action>
+		
+		<!-- 显示所有活动 -->
+		<action name="view_all_activity"
+			class="com.juicy.signature.action.manage.ActivityManageAction">
+			<interceptor-ref name="managerStack" />
+			<result>all_activity.jsp</result>
+		</action>
+		
+		<!-- 显示添加活动 -->
+		<action name="view_add_activity"
+			class="com.juicy.signature.action.manage.ActivityManageAction" method="viewAdd">
+			<interceptor-ref name="managerStack" />
+			<result>add_activity.jsp</result>
+		</action>
+		
+		<!-- 添加活动,token -->
+		<action name="add_activity"
+			class="com.juicy.signature.action.manage.ActivityManageAction" method="add">
+			<interceptor-ref name="managerStack" />
+			<!-- 保存活动图片的文件夹名称 -->
+			<param name="savePath">upload</param>
+			<result type="chain">
+				<param name="actionName">view_add_activity</param>
+			</result>
+		</action>
+		
+		<!-- 显示修改活动 -->
+		<action name="view_update_activity"
+			class="com.juicy.signature.action.manage.ActivityManageAction" method="viewUpdate">
+			<interceptor-ref name="managerStack" />
+			<result>update_activity.jsp</result>
+		</action>
+		
+		<!-- 修改活动 -->
+		<action name="update_activity"
+			class="com.juicy.signature.action.manage.ActivityManageAction" method="update">
+			<interceptor-ref name="managerStack" />
+			<!-- 保存活动图片的文件夹名称 -->
+			<param name="savePath">upload</param>
+			<result>success.jsp</result>
+		</action>
+		
+		<!-- 显示设置活动首页显示 -->
+		<action name="view_set_index_activity"
+			class="com.juicy.signature.action.manage.ActivityManageAction" method="viewSetIndex">
+			<interceptor-ref name="managerStack" />
+			<result>set_index_activity.jsp</result>
+		</action>
+		
+		<!-- 设置活动首页显示 -->
+		<action name="set_index_activity"
+			class="com.juicy.signature.action.manage.ActivityManageAction" method="setIndex">
+			<interceptor-ref name="managerStack" />
+			<!-- 保存活动图片的文件夹名称 -->
+			<param name="savePath">upload</param>
+			<result>success.jsp</result>
+		</action>
+		
+		<!-- 取消活动首页显示 -->
+		<action name="cancel_index_activity"
+			class="com.juicy.signature.action.manage.ActivityManageAction" method="cancelIndex">
+			<interceptor-ref name="managerStack" />
+			<result>success.jsp</result>
+		</action>
+		
+		<!-- 删除活动 -->
+		<action name="delete_activity"
+			class="com.juicy.signature.action.manage.ActivityManageAction" method="delete">
+			<interceptor-ref name="managerStack" />
+			<result>success.jsp</result>
+		</action>
+		
+		<!-- 显示回收站删除的活动 -->
+		<action name="view_deleted_activity"
+			class="com.juicy.signature.action.manage.ActivityManageAction" method="viewDeleted">
+			<interceptor-ref name="managerStack" />
+			<result>deleted_activity.jsp</result>
+		</action>
+		
+		<!-- 取消删除活动 -->
+		<action name="undelete_activity"
+			class="com.juicy.signature.action.manage.ActivityManageAction" method="undelete">
+			<interceptor-ref name="managerStack" />
+			<result>success.jsp</result>
+		</action>
+		
+		<!-- 显示所有敏感词 -->
+		<action name="view_all_keyword"
+			class="com.juicy.signature.action.manage.AuditManageAction" >
+			<interceptor-ref name="managerStack" />
+			<result>all_keyword.jsp</result>
+		</action>
+		
+		<!-- 显示添加敏感词 -->
+		<action name="view_add_keyword"
+			class="com.juicy.signature.action.manage.AuditManageAction" method="viewAdd">
+			<interceptor-ref name="managerStack" />
+			<result>add_keyword.jsp</result>
+		</action>
+		
+		<!-- 添加敏感词,token -->
+		<action name="add_keyword"
+			class="com.juicy.signature.action.manage.AuditManageAction" method="add">
+			<interceptor-ref name="managerStack" />
+			<result type="chain">
+				<param name="actionName">view_add_keyword</param>
+			</result>
+		</action>
+		
+		<!-- 显示修改敏感词 -->
+		<action name="view_update_keyword"
+			class="com.juicy.signature.action.manage.AuditManageAction" method="viewUpdate">
+			<interceptor-ref name="managerStack" />
+			<result>update_keyword.jsp</result>
+		</action>
+		
+		<!-- 修改敏感词 -->
+		<action name="update_keyword"
+			class="com.juicy.signature.action.manage.AuditManageAction" method="update">
+			<interceptor-ref name="managerStack" />
+			<result>success.jsp</result>
+		</action>
+		
+		<!-- 删除敏感词 -->
+		<action name="delete_keyword"
+			class="com.juicy.signature.action.manage.AuditManageAction" method="delete">
+			<interceptor-ref name="managerStack" />
+			<result>success.jsp</result>
+		</action>
+		
+		<!-- 显示原创签名 -->
+		<action name="view_audit_original"
+			class="com.juicy.signature.action.manage.AuditManageAction" method="viewAuditOriginal">
+			<interceptor-ref name="managerStack" />
+			<result>audit_original.jsp</result>
+		</action>
+		
+		<!-- 审核原创签名 -->
+		<action name="set_audit_status"
+			class="com.juicy.signature.action.manage.AuditManageAction" method="setAuditStatus">
+			<interceptor-ref name="managerStack" />
+			<result>success.jsp</result>
+		</action>
+		
+		<!-- 显示所有用户 -->
+		<action name="view_all_customer"
+			class="com.juicy.signature.action.manage.CustomerStatisticsAction" >
+			<interceptor-ref name="managerStack" />
+			<result>all_customer.jsp</result>
+		</action>
+		
+		<!-- 显示所有用户 -->
+		<action name="set_customer_stat"
+			class="com.juicy.signature.action.manage.CustomerStatisticsAction" method="setCustomerStat">
+			<interceptor-ref name="managerStack" />
+			<result type="chain">
+				<param name="actionName">view_all_customer</param>
+			</result>
+		</action>
+		
+		<!-- 显示用户登录情况 -->
+		<action name="view_user_login"
+			class="com.juicy.signature.action.manage.CustomerStatisticsAction" method="viewUserLogin">
+			<interceptor-ref name="managerStack" />
+			<result>user_login.jsp</result>
+		</action>
+		
+		<!-- 显示用户统计 -->
+		<action name="view_customer_statistics"
+			class="com.juicy.signature.action.manage.CustomerStatisticsAction" method="viewCustomerStatistics" >
+			<interceptor-ref name="managerStack" />
+			<result>customer_statistics.jsp</result>
+		</action>
+		
+		<!-- 显示门户参数 -->
+		<action name="view_portal_parameter"
+			class="com.juicy.signature.action.manage.SystemManageAction" >
+			<interceptor-ref name="managerStack" />
+			<result>portal_parameter.jsp</result>
+		</action>
+		
+		<!-- 保存门户参数 -->
+		<action name="save_portal_parameter"
+			class="com.juicy.signature.action.manage.SystemManageAction" method="savePortalParameter">
+			<interceptor-ref name="managerStack" />
+			<result type="chain">
+				<param name="actionName">view_portal_parameter</param>
+			</result>
+		</action>
+		
+		<!-- 显示信息发送参数 -->
+		<action name="view_message_send"
+			class="com.juicy.signature.action.manage.SystemManageAction" method="viewMessageSend" >
+			<interceptor-ref name="managerStack" />
+			<result>message_send.jsp</result>
+		</action>
+		
+		<!-- 保存信息发送参数 -->
+		<action name="save_message_send"
+			class="com.juicy.signature.action.manage.SystemManageAction" method="saveMessageSend">
+			<interceptor-ref name="managerStack" />
+			<result type="chain">
+				<param name="actionName">view_message_send</param>
+			</result>
+		</action>
+		
+		<!-- 显示信息发送参数 -->
+		<action name="view_default_content"
+			class="com.juicy.signature.action.manage.SystemManageAction" method="viewDefaultContent" >
+			<interceptor-ref name="managerStack" />
+			<result>default_content.jsp</result>
+		</action>
+		
+		<!-- 修改信息发送参数 -->
+		<action name="save_default_content"
+			class="com.juicy.signature.action.manage.SystemManageAction" method="saveDefaultContent" >
+			<interceptor-ref name="managerStack" />
+			<result type="chain">
+				<param name="actionName">view_default_content</param>
+			</result>
+		</action>
+		
+		<!-- 显示系统特殊号码 -->
+		<action name="view_special_number"
+			class="com.juicy.signature.action.manage.FeedbackManageAction">
+			<interceptor-ref name="managerStack" />
+			<result>special_number.jsp</result>
+		</action>
+		
+		<!-- 添加系统特殊号码 -->
+		<action name="save_special_number"
+			class="com.juicy.signature.action.manage.FeedbackManageAction" method="add">
+			<interceptor-ref name="managerStack" />
+			<result type="chain">
+				<param name="actionName">view_special_number</param>
+			</result>
+		</action>
+		
+		<!-- 删除系统特殊号码 -->
+		<action name="delete_special_number"
+			class="com.juicy.signature.action.manage.FeedbackManageAction" method="delete">
+			<interceptor-ref name="managerStack" />
+			<result type="chain">
+				<param name="actionName">view_special_number</param>
+			</result>
+		</action>
+		
+		<!-- 显示用户意见 -->
+		<action name="view_user_suggest"
+			class="com.juicy.signature.action.manage.FeedbackManageAction" method="viewSuggest">
+			<interceptor-ref name="managerStack" />
+			<result>user_suggest.jsp</result>
+		</action>
+		
+		<!-- 删除用户意见 -->
+		<action name="delete_user_suggest"
+			class="com.juicy.signature.action.manage.FeedbackManageAction" method="deleteSuggest">
+			<interceptor-ref name="managerStack" />
+			<result type="chain">
+				<param name="actionName">view_user_suggest</param>
+			</result>
+		</action>
+		
+		<!-- 显示修改局方默认签名 -->
+		<action name="view_update_group"
+			class="com.juicy.signature.action.manage.GroupManageAction" method="viewUpdateGroup">
+			<interceptor-ref name="managerStack" />
+			<result>update_group.jsp</result>
+		</action>
+		
+		<!-- 修改局方默认签名 -->
+		<action name="update_group"
+			class="com.juicy.signature.action.manage.GroupManageAction">
+			<interceptor-ref name="managerStack" />
+			<result type="chain">
+				<param name="actionName">view_update_group</param>
+			</result>
+		</action>
+		
+		<!-- 所有页面都通过Struts框架 -->
+		<action name="*">
+			<result>{1}.jsp</result>
+		</action>
+		</package>
+</struts>

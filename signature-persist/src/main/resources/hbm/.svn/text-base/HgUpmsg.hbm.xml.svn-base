@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.juicy.signature.persist.po">
+	<class
+		name="HgUpmsg"
+		table="HG_UPMSG"
+	>
+		<meta attribute="sync-DAO">false</meta>
+
+		<property
+			name="UpmsgActionCode"
+			column="UPMSG_ACTION_CODE"
+			type="integer"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="UpmsgStr"
+			column="UPMSG_STR"
+			type="string"
+			not-null="false"
+			length="20"
+		/>
+		<property
+			name="UpmsgDes"
+			column="UPMSG_DES"
+			type="string"
+			not-null="false"
+			length="80"
+		/>
+
+
+	</class>	
+</hibernate-mapping>

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 指定Spring配置文件的Schema信息 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+	http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+
+	<!-- 定义数据源Bean，使用C3P0数据源实现 -->
+	<!-- 设置连接数据库的驱动、URL、用户名、密码
+		连接池最大连接数、最小连接数、初始连接数等参数 -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close"
+		p:driverClass="${db.driverClass}"
+		p:jdbcUrl="${db.jdbcUrl}"
+		p:user="${db.user}"
+		p:password="${db.password}"
+		p:maxPoolSize="${db.maxPoolSize}"
+		p:minPoolSize="${db.minPoolSize}"
+		p:initialPoolSize="${db.initialPoolSize}"
+		p:maxIdleTime="${db.maxIdleTime}"/>
+		
+	<!-- 定义Hibernate的SessionFactory -->
+	<!-- 依赖注入数据源，注入正是上面定义的dataSource -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean"
+		p:dataSource-ref="dataSource">
+		<!-- mappingResouces属性用来列出全部映射文件 -->
+		<property name="mappingResources">
+			<list>
+				<!-- 以下用来列出Hibernate映射文件 -->
+				<value>hbm/StUsers.hbm.xml</value>
+				<value>hbm/HgManager.hbm.xml</value>
+				<value>hbm/HgCustomer.hbm.xml</value>
+				<value>hbm/HgSendrule.hbm.xml</value>
+				<value>hbm/SignatureClass.hbm.xml</value>
+				<value>hbm/HgDiyInfo.hbm.xml</value>
+				<value>hbm/SignatureOriginal.hbm.xml</value>
+				<value>hbm/SignatureLibrary.hbm.xml</value>	
+				<value>hbm/SignatureCollect.hbm.xml</value>		
+				<value>hbm/HgSpecialNumbers.hbm.xml</value>	
+				<value>hbm/HgOwnPhone.hbm.xml</value>
+				<value>hbm/Help.hbm.xml</value>
+				<value>hbm/HgKeyWord.hbm.xml</value>
+				<value>hbm/Suggest.hbm.xml</value>
+				<value>hbm/Activity.hbm.xml</value>
+				<value>hbm/Recommend.hbm.xml</value>
+				
+				<value>hbm/Portal.hbm.xml</value>
+				<value>hbm/MessageSend.hbm.xml</value>
+				<value>hbm/HgComboDetail.hbm.xml</value>
+				<value>hbm/HgFirmParameter.hbm.xml</value>
+				<value>hbm/HgSysSpecialNumbers.hbm.xml</value>
+				<value>hbm/HgDefruleContent.hbm.xml</value>
+				
+				<value>hbm/City.hbm.xml</value>
+				<value>hbm/CityRule.hbm.xml</value>
+			</list>
+		</property>
+		<!-- 定义Hibernate的SessionFactory的属性 -->
+		<property name="hibernateProperties">
+			<!-- 指定数据库方言、是否自动建表
+				是否生成SQL语句等 	-->
+			<value>
+			hibernate.dialect=org.hibernate.dialect.SybaseDialect
+			hibernate.show_sql=false
+			hibernate.format_sql=false
+			#开启二级缓存
+			hibernate.cache.use_second_level_cache=true
+			#设置二级缓存的提供者
+			hibernate.cache.provider_class=org.hibernate.cache.EhCacheProvider
+			
+			#关闭查询缓存
+			#hibernate.cache.use_query_cache=false			
+			#开启二级缓存的统计功能
+			#hibernate.generate_statistics=true
+			#设置使用结构化方式来维护缓存项
+			#hibernate.cache.use_structured_entries=true
+			</value>
+		</property>
+	</bean>
+	
+	<!-- 配置DAO组件的模板 -->
+	<bean id="daoTemplate" abstract="true" lazy-init="true"
+		p:sessionFactory-ref="sessionFactory">
+	</bean>
+
+	<!-- DAO -->
+	<bean id="stUsersDao"
+		class="com.juicy.signature.persist.dao.impl.StUsersDaoImpl"
+		parent="daoTemplate">
+	</bean>
+	
+	<bean id="hgManagerDao"
+		class="com.juicy.signature.persist.dao.impl.HgManagerDaoImpl"
+		parent="daoTemplate">
+	</bean>
+			
+	<bean id="hgCustomerDao"
+		class="com.juicy.signature.persist.dao.impl.HgCustomerDaoImpl"
+		parent="daoTemplate">
+	</bean>
+	
+	<bean id="hgSendruleDao"
+		class="com.juicy.signature.persist.dao.impl.HgSendruleDaoImpl"
+		parent="daoTemplate">
+	</bean>
+	
+	<bean id="signatureClassDao"
+		class="com.juicy.signature.persist.dao.impl.SignatureClassDaoImpl"
+		parent="daoTemplate">
+	</bean>
+	
+	<bean id="hgDiyInfoDao"
+		class="com.juicy.signature.persist.dao.impl.HgDiyInfoDaoImpl"
+		parent="daoTemplate">
+	</bean>
+	
+	<bean id="signatureOriginalDao"
+		class="com.juicy.signature.persist.dao.impl.SignatureOriginalDaoImpl"
+		parent="daoTemplate">
+	</bean>
+	
+	<bean id="signatureLibraryDao"
+		class="com.juicy.signature.persist.dao.impl.SignatureLibraryDaoImpl"
+		parent="daoTemplate">
+	</bean>
+	
+	<bean id="signatureCollectDao"
+		class="com.juicy.signature.persist.dao.impl.SignatureCollectDaoImpl"
+		parent="daoTemplate">
+	</bean>
+	
+	<bean id="hgSpecialNumbersDao"
+		class="com.juicy.signature.persist.dao.impl.HgSpecialNumbersDaoImpl"
+		parent="daoTemplate">
+	</bean>
+	
+	<bean id="hgOwnPhoneDao"
+		class="com.juicy.signature.persist.dao.impl.HgOwnPhoneDaoImpl"
+		parent="daoTemplate">
+	</bean>
+	
+	<bean id="helpDao"
+		class="com.juicy.signature.persist.dao.impl.HelpDaoImpl"
+		parent="daoTemplate">
+	</bean>
+	
+	<bean id="hgKeyWordDao"
+		class="com.juicy.signature.persist.dao.impl.HgKeyWordDaoImpl"
+		parent="daoTemplate">
+	</bean>
+	
+	<bean id="suggestDao"
+		class="com.juicy.signature.persist.dao.impl.SuggestDaoImpl"
+		parent="daoTemplate">
+	</bean>
+	
+	<bean id="activityDao"
+		class="com.juicy.signature.persist.dao.impl.ActivityDaoImpl"
+		parent="daoTemplate">
+	</bean>
+	
+	<bean id="recommendDao"
+		class="com.juicy.signature.persist.dao.impl.RecommendDaoImpl"
+		parent="daoTemplate">
+	</bean>
+	
+	<bean id="portalDao"
+		class="com.juicy.signature.persist.dao.impl.PortalDaoImpl"
+		parent="daoTemplate">
+	</bean>
+	
+	<bean id="messageSendDao"
+		class="com.juicy.signature.persist.dao.impl.MessageSendDaoImpl"
+		parent="daoTemplate">
+	</bean>
+	
+	<bean id="hgComboDetailDao"
+		class="com.juicy.signature.persist.dao.impl.HgComboDetailDaoImpl"
+		parent="daoTemplate">
+	</bean>
+	
+	<bean id="hgFirmParameterDao"
+		class="com.juicy.signature.persist.dao.impl.HgFirmParameterDaoImpl"
+		parent="daoTemplate">
+	</bean>
+	
+	<bean id="hgSysSpecialNumbersDao"
+		class="com.juicy.signature.persist.dao.impl.HgSysSpecialNumbersDaoImpl"
+		parent="daoTemplate">
+	</bean>
+	
+	<bean id="hgDefruleContentDao"
+		class="com.juicy.signature.persist.dao.impl.HgDefruleContentDaoImpl"
+		parent="daoTemplate">
+	</bean>
+	
+	<bean id="cityDao"
+		class="com.juicy.signature.persist.dao.impl.CityDaoImpl"
+		parent="daoTemplate">
+	</bean>
+	
+	<bean id="cityRuleDao"
+		class="com.juicy.signature.persist.dao.impl.CityRuleDaoImpl"
+		parent="daoTemplate">
+	</bean>
+	
+</beans>

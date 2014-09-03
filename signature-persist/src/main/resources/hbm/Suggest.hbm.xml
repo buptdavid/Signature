@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.juicy.signature.persist.po">
+	<class
+		name="Suggest"
+		table="SUGGEST"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<cache usage="read-write"></cache>
+
+		<!-- 主键ID -->
+		<id
+			name="Id"
+			type="integer"
+			column="id"
+		>
+		</id>
+		
+		<property
+			name="LoginName"
+			column="login_name"
+			type="string"
+			not-null="false"
+			length="64"
+		/>
+		<property
+			name="Name"
+			column="name"
+			type="string"
+			not-null="false"
+			length="64"
+		/>
+		<property
+			name="Mobile"
+			column="mobile"
+			type="string"
+			not-null="false"
+			length="64"
+		/>
+		<property
+			name="Email"
+			column="email"
+			type="string"
+			not-null="false"
+			length="64"
+		/>
+		<property
+			name="Title"
+			column="title"
+			type="string"
+			not-null="true"
+			length="100"
+		/>
+		<property
+			name="Content"
+			column="content"
+			type="string"
+			not-null="false"
+			length="400"
+		/>
+		<property
+			name="Time"
+			column="time"
+			type="timestamp"
+			not-null="false"
+			length="23"
+		/>
+
+
+	</class>	
+</hibernate-mapping>

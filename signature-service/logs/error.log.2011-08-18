@@ -1,0 +1,24 @@
+2011-08-18 11:15:37  [ main:12830 ] - [ ERROR ]  Unsuccessful: alter table HG_DIY_INFO add id int
+2011-08-18 11:15:37  [ main:12833 ] - [ ERROR ]  ALTER TABLE 'HG_DIY_INFO' failed. Default clause is required in order to add non-NULL column 'id'.
+
+2011-08-18 11:15:37  [ main:12849 ] - [ ERROR ]  Unsuccessful: alter table HG_DIY_INFO add constraint FKF0C90CD9BAE32BCC foreign key (id) references SIGNATURE_ORIGINAL
+2011-08-18 11:15:37  [ main:12849 ] - [ ERROR ]  Column name 'id' does not exist in target table.
+
+2011-08-18 11:27:26  [ main:28496 ] - [ ERROR ]  Unsuccessful: alter table HG_DIY_INFO add id int
+2011-08-18 11:27:26  [ main:28496 ] - [ ERROR ]  ALTER TABLE 'HG_DIY_INFO' failed. Default clause is required in order to add non-NULL column 'id'.
+
+2011-08-18 11:27:26  [ main:28512 ] - [ ERROR ]  Unsuccessful: alter table HG_DIY_INFO add constraint FKF0C90CD9BAE32BCC foreign key (id) references SIGNATURE_ORIGINAL
+2011-08-18 11:27:26  [ main:28512 ] - [ ERROR ]  Column name 'id' does not exist in target table.
+
+2011-08-18 16:40:18  [ main:9211 ] - [ ERROR ]  Unsuccessful: alter table HG_DIY_INFO add id int
+2011-08-18 16:40:18  [ main:9220 ] - [ ERROR ]  ALTER TABLE 'HG_DIY_INFO' failed. Default clause is required in order to add non-NULL column 'id'.
+
+2011-08-18 16:40:18  [ main:9236 ] - [ ERROR ]  Unsuccessful: alter table HG_DIY_INFO add constraint FKF0C90CD9BAE32BCC foreign key (id) references SIGNATURE_ORIGINAL
+2011-08-18 16:40:18  [ main:9237 ] - [ ERROR ]  Column name 'id' does not exist in target table.
+
+2011-08-18 16:41:56  [ main:20576 ] - [ ERROR ]  Unsuccessful: alter table HG_DIY_INFO add id int
+2011-08-18 16:41:56  [ main:20577 ] - [ ERROR ]  ALTER TABLE 'HG_DIY_INFO' failed. Default clause is required in order to add non-NULL column 'id'.
+
+2011-08-18 16:41:56  [ main:20584 ] - [ ERROR ]  Unsuccessful: alter table HG_DIY_INFO add constraint FKF0C90CD9BAE32BCC foreign key (id) references SIGNATURE_ORIGINAL
+2011-08-18 16:41:56  [ main:20584 ] - [ ERROR ]  Column name 'id' does not exist in target table.
+

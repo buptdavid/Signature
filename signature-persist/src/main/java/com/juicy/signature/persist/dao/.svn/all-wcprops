@@ -1,0 +1,149 @@
+K 25
+svn:wc:ra_dav:version-url
+V 177
+/svn/Jxht_local_project/!svn/ver/452/05%E6%89%8B%E6%9C%BA%E7%AD%BE%E5%90%8D/%E6%BA%90%E4%BB%A3%E7%A0%81/signature/signature-persist/src/main/java/com/juicy/signature/persist/dao
+END
+HgOwnPhoneDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 196
+/svn/Jxht_local_project/!svn/ver/452/05%E6%89%8B%E6%9C%BA%E7%AD%BE%E5%90%8D/%E6%BA%90%E4%BB%A3%E7%A0%81/signature/signature-persist/src/main/java/com/juicy/signature/persist/dao/HgOwnPhoneDao.java
+END
+HgFirmParameterDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 201
+/svn/Jxht_local_project/!svn/ver/452/05%E6%89%8B%E6%9C%BA%E7%AD%BE%E5%90%8D/%E6%BA%90%E4%BB%A3%E7%A0%81/signature/signature-persist/src/main/java/com/juicy/signature/persist/dao/HgFirmParameterDao.java
+END
+HgDiyInfoDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 195
+/svn/Jxht_local_project/!svn/ver/452/05%E6%89%8B%E6%9C%BA%E7%AD%BE%E5%90%8D/%E6%BA%90%E4%BB%A3%E7%A0%81/signature/signature-persist/src/main/java/com/juicy/signature/persist/dao/HgDiyInfoDao.java
+END
+HgCustomerDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 196
+/svn/Jxht_local_project/!svn/ver/452/05%E6%89%8B%E6%9C%BA%E7%AD%BE%E5%90%8D/%E6%BA%90%E4%BB%A3%E7%A0%81/signature/signature-persist/src/main/java/com/juicy/signature/persist/dao/HgCustomerDao.java
+END
+SuggestDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 193
+/svn/Jxht_local_project/!svn/ver/452/05%E6%89%8B%E6%9C%BA%E7%AD%BE%E5%90%8D/%E6%BA%90%E4%BB%A3%E7%A0%81/signature/signature-persist/src/main/java/com/juicy/signature/persist/dao/SuggestDao.java
+END
+SignatureLibraryDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 202
+/svn/Jxht_local_project/!svn/ver/452/05%E6%89%8B%E6%9C%BA%E7%AD%BE%E5%90%8D/%E6%BA%90%E4%BB%A3%E7%A0%81/signature/signature-persist/src/main/java/com/juicy/signature/persist/dao/SignatureLibraryDao.java
+END
+SignatureOriginalDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 203
+/svn/Jxht_local_project/!svn/ver/452/05%E6%89%8B%E6%9C%BA%E7%AD%BE%E5%90%8D/%E6%BA%90%E4%BB%A3%E7%A0%81/signature/signature-persist/src/main/java/com/juicy/signature/persist/dao/SignatureOriginalDao.java
+END
+SignatureClassDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 200
+/svn/Jxht_local_project/!svn/ver/452/05%E6%89%8B%E6%9C%BA%E7%AD%BE%E5%90%8D/%E6%BA%90%E4%BB%A3%E7%A0%81/signature/signature-persist/src/main/java/com/juicy/signature/persist/dao/SignatureClassDao.java
+END
+HelpDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 190
+/svn/Jxht_local_project/!svn/ver/452/05%E6%89%8B%E6%9C%BA%E7%AD%BE%E5%90%8D/%E6%BA%90%E4%BB%A3%E7%A0%81/signature/signature-persist/src/main/java/com/juicy/signature/persist/dao/HelpDao.java
+END
+HgManagerDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 195
+/svn/Jxht_local_project/!svn/ver/452/05%E6%89%8B%E6%9C%BA%E7%AD%BE%E5%90%8D/%E6%BA%90%E4%BB%A3%E7%A0%81/signature/signature-persist/src/main/java/com/juicy/signature/persist/dao/HgManagerDao.java
+END
+HgSysSpecialNumbersDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 205
+/svn/Jxht_local_project/!svn/ver/452/05%E6%89%8B%E6%9C%BA%E7%AD%BE%E5%90%8D/%E6%BA%90%E4%BB%A3%E7%A0%81/signature/signature-persist/src/main/java/com/juicy/signature/persist/dao/HgSysSpecialNumbersDao.java
+END
+HgSpecialNumbersDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 202
+/svn/Jxht_local_project/!svn/ver/452/05%E6%89%8B%E6%9C%BA%E7%AD%BE%E5%90%8D/%E6%BA%90%E4%BB%A3%E7%A0%81/signature/signature-persist/src/main/java/com/juicy/signature/persist/dao/HgSpecialNumbersDao.java
+END
+ActivityDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 194
+/svn/Jxht_local_project/!svn/ver/452/05%E6%89%8B%E6%9C%BA%E7%AD%BE%E5%90%8D/%E6%BA%90%E4%BB%A3%E7%A0%81/signature/signature-persist/src/main/java/com/juicy/signature/persist/dao/ActivityDao.java
+END
+MessageSendDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 197
+/svn/Jxht_local_project/!svn/ver/452/05%E6%89%8B%E6%9C%BA%E7%AD%BE%E5%90%8D/%E6%BA%90%E4%BB%A3%E7%A0%81/signature/signature-persist/src/main/java/com/juicy/signature/persist/dao/MessageSendDao.java
+END
+HgDefruleContentDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 202
+/svn/Jxht_local_project/!svn/ver/452/05%E6%89%8B%E6%9C%BA%E7%AD%BE%E5%90%8D/%E6%BA%90%E4%BB%A3%E7%A0%81/signature/signature-persist/src/main/java/com/juicy/signature/persist/dao/HgDefruleContentDao.java
+END
+HgSendruleDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 196
+/svn/Jxht_local_project/!svn/ver/452/05%E6%89%8B%E6%9C%BA%E7%AD%BE%E5%90%8D/%E6%BA%90%E4%BB%A3%E7%A0%81/signature/signature-persist/src/main/java/com/juicy/signature/persist/dao/HgSendruleDao.java
+END
+CityRuleDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 194
+/svn/Jxht_local_project/!svn/ver/452/05%E6%89%8B%E6%9C%BA%E7%AD%BE%E5%90%8D/%E6%BA%90%E4%BB%A3%E7%A0%81/signature/signature-persist/src/main/java/com/juicy/signature/persist/dao/CityRuleDao.java
+END
+HgComboDetailDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 199
+/svn/Jxht_local_project/!svn/ver/452/05%E6%89%8B%E6%9C%BA%E7%AD%BE%E5%90%8D/%E6%BA%90%E4%BB%A3%E7%A0%81/signature/signature-persist/src/main/java/com/juicy/signature/persist/dao/HgComboDetailDao.java
+END
+PortalDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 192
+/svn/Jxht_local_project/!svn/ver/452/05%E6%89%8B%E6%9C%BA%E7%AD%BE%E5%90%8D/%E6%BA%90%E4%BB%A3%E7%A0%81/signature/signature-persist/src/main/java/com/juicy/signature/persist/dao/PortalDao.java
+END
+HgKeyWordDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 195
+/svn/Jxht_local_project/!svn/ver/452/05%E6%89%8B%E6%9C%BA%E7%AD%BE%E5%90%8D/%E6%BA%90%E4%BB%A3%E7%A0%81/signature/signature-persist/src/main/java/com/juicy/signature/persist/dao/HgKeyWordDao.java
+END
+SignatureCollectDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 202
+/svn/Jxht_local_project/!svn/ver/452/05%E6%89%8B%E6%9C%BA%E7%AD%BE%E5%90%8D/%E6%BA%90%E4%BB%A3%E7%A0%81/signature/signature-persist/src/main/java/com/juicy/signature/persist/dao/SignatureCollectDao.java
+END
+CityDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 190
+/svn/Jxht_local_project/!svn/ver/452/05%E6%89%8B%E6%9C%BA%E7%AD%BE%E5%90%8D/%E6%BA%90%E4%BB%A3%E7%A0%81/signature/signature-persist/src/main/java/com/juicy/signature/persist/dao/CityDao.java
+END
+StUsersDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 193
+/svn/Jxht_local_project/!svn/ver/452/05%E6%89%8B%E6%9C%BA%E7%AD%BE%E5%90%8D/%E6%BA%90%E4%BB%A3%E7%A0%81/signature/signature-persist/src/main/java/com/juicy/signature/persist/dao/StUsersDao.java
+END
+RecommendDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 195
+/svn/Jxht_local_project/!svn/ver/452/05%E6%89%8B%E6%9C%BA%E7%AD%BE%E5%90%8D/%E6%BA%90%E4%BB%A3%E7%A0%81/signature/signature-persist/src/main/java/com/juicy/signature/persist/dao/RecommendDao.java
+END

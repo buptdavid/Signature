@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.juicy.signature.persist.po">
+	<class
+		name="SignatureClass"
+		table="SIGNATURE_CLASS"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<cache usage="nonstrict-read-write"></cache>
+
+		<id
+			name="Id"
+			type="integer"
+			column="id"
+		>
+		</id>
+		<property
+			name="ParentId"
+			column="parent_id"
+			type="integer"
+			not-null="true"
+			length="10"
+		/>
+		<property
+			name="Name"
+			column="name"
+			type="string"
+			not-null="false"
+			length="64"
+		/>
+		<property
+			name="Basis"
+			column="basis"
+			type="java.lang.Byte"
+			not-null="true"
+			length="3"
+		/>
+
+		<property
+			name="Deleted"
+			column="deleted"
+			type="boolean"
+			not-null="true"
+		/>
+
+
+	</class>	
+</hibernate-mapping>

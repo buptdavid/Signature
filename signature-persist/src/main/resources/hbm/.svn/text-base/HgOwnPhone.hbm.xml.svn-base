@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.juicy.signature.persist.po">
+	<class
+		name="HgOwnPhone"
+		table="HG_OWN_PHONE"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="Id"
+			type="integer"
+			column="OWN_PHONE_ID"
+		>
+		</id>
+
+		<property
+			name="CustomerId"
+			column="CUSTOMER_ID"
+			type="integer"
+			not-null="true"
+			length="10"
+		/>
+		<property
+			name="OwnPhoneZone"
+			column="OWN_PHONE_ZONE"
+			type="string"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="OwnPhone"
+			column="OWN_PHONE"
+			type="string"
+			not-null="true"
+			length="20"
+		/>
+		<property
+			name="OwnPhoneType"
+			column="OWN_PHONE_TYPE"
+			type="integer"
+			not-null="false"
+			length="10"
+		/>
+
+
+	</class>	
+</hibernate-mapping>

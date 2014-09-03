@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.juicy.signature.persist.po">
+	<class
+		name="SignatureLibrary"
+		table="SIGNATURE_LIBRARY"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<cache usage="nonstrict-read-write"></cache>
+		<id
+			name="Id"
+			type="integer"
+			column="id"
+		>
+		</id>
+
+		<property
+			name="Content"
+			column="content"
+			type="string"
+			not-null="false"
+			length="1000"
+		/>
+		
+		<property
+			name="Recommend"
+			column="is_recommend"
+			type="java.lang.Boolean"
+			not-null="true"
+			length="1"
+		/>
+		
+		<many-to-one
+			name="SignatureClass"
+			column="class_id"
+			class="SignatureClass"
+			not-null="false"
+			lazy="false"
+		>
+		</many-to-one>
+
+
+	</class>	
+</hibernate-mapping>

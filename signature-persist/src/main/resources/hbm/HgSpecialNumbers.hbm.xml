@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.juicy.signature.persist.po">
+	<class
+		name="HgSpecialNumbers"
+		table="HG_SPECIAL_NUMBERS"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="Id"
+			type="integer"
+			column="SPECIAL_NUMBER_ID"
+		>
+		</id>
+
+		<property
+			name="CustomerId"
+			column="CUSTOMER_ID"
+			type="integer"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="SpecialNumber"
+			column="SPECIAL_NUMBER"
+			type="string"
+			not-null="true"
+			length="15"
+		/>
+		<property
+			name="SpecialNumberType"
+			column="SPECIAL_NUMBER_TYPE"
+			type="integer"
+			not-null="true"
+			length="10"
+		/>
+		<property
+			name="ShieldPeriod"
+			column="SHIELD_PERIOD"
+			type="integer"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="SpecialNumberCeratedate"
+			column="SPECIAL_NUMBER_CERATEDATE"
+			type="timestamp"
+			not-null="false"
+			length="23"
+		/>
+		<property
+			name="Remark"
+			column="REMARK"
+			type="string"
+			not-null="false"
+			length="40"
+		/>
+
+
+	</class>	
+</hibernate-mapping>
